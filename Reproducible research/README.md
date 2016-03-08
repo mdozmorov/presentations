@@ -12,6 +12,27 @@
 
 - Tools for reproducible research by Karl Broman [http://kbroman.org/Tools4RR/](http://kbroman.org/Tools4RR/), [Schedule](http://kbroman.org/Tools4RR/pages/schedule.html), [lots of educational links](http://kbroman.org/Tools4RR/pages/resources.html), [Git repository](https://github.com/kbroman/Tools4RR/tree/master)
 
+- Steps toward reproducible research by Karl Broman [http://kbroman.org/steps2rr/](http://kbroman.org/steps2rr/), [Git repository](https://github.com/kbroman/steps2rr)
+
 - Harvard CS 109: Data Science course with video lectures, pdf slides and iPython notebooks. [Course overview](https://cs109.github.io/2015/), [Videos](https://cs109.github.io/2015/pages/videos.html), [Git repository](https://github.com/cs109/2015), [All course-related material on Github](https://github.com/cs109)
 
 - [References and further reading](https://ropensci.github.io/reproducibility-guide/sections/references/) collection, from [Reproducibility in Science](https://ropensci.github.io/reproducibility-guide/) guide by [rOpenSci](http://ropensci.org/) project.
+
+- OITE Webinar: Keeping a Lab Notebook ([View the Webinar](https://www.training.nih.gov/OITEtutorials/OITENotebook/Notebook.html); [Download the slides and a written transcript](https://www.training.nih.gov/assets/Lab_Notebook_508_(new).pdf))
+
+- GEN publication "Copy Me If You Can!" [Part 1](http://www.genengnews.com/gen-articles/copy-me-if-you-can-part-1/5530/), [Part 2](http://www.genengnews.com/gen-articles/copy-me-if-you-can-part-2/5537/)
+
+- Antibody Alternatives - The Scientist Magazine. Reproducibility of antibodies, and alternative solutions. [http://www.the-scientist.com/?articles.view/articleNo/45134/title/Antibody-Alternatives/](http://www.the-scientist.com/?articles.view/articleNo/45134/title/Antibody-Alternatives/)
+
+- NIH own "Principles and Guidelines for Reporting Preclinical Research" [https://www.nih.gov/research-training/rigor-reproducibility/principles-guidelines-reporting-preclinical-research](https://www.nih.gov/research-training/rigor-reproducibility/principles-guidelines-reporting-preclinical-research)
+
+- How to Comply with Grants: Writing Data Management Plans and Providing Public Access from Margaret Henderson, VCU 
+ [http://guides.library.vcu.edu/data/USpubaccess](http://guides.library.vcu.edu/data/USpubaccess)
+
+- Hadley Wickham' presentation about tidy data and tools. [Video](https://vimeo.com/33727555)
+
+- Science blog post ["Register your study as a new publication option"](http://www.sciencemag.org/careers/2015/12/register-your-study-new-publication-option), about OSF initiative to pre-publish experimental protocol/design
+
+
+
+ 
