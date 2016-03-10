@@ -26,6 +26,8 @@
 
 - NIH own "Principles and Guidelines for Reporting Preclinical Research" [https://www.nih.gov/research-training/rigor-reproducibility/principles-guidelines-reporting-preclinical-research](https://www.nih.gov/research-training/rigor-reproducibility/principles-guidelines-reporting-preclinical-research)
 
+- NSF own "Dissemination and Sharing of Research Results" [https://www.nsf.gov/bfa/dias/policy/dmp.jsp](https://www.nsf.gov/bfa/dias/policy/dmp.jsp)
+
 - How to Comply with Grants: Writing Data Management Plans and Providing Public Access from Margaret Henderson, VCU 
  [http://guides.library.vcu.edu/data/USpubaccess](http://guides.library.vcu.edu/data/USpubaccess)
 
