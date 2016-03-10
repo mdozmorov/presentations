@@ -35,6 +35,6 @@
 
 - Science blog post ["Register your study as a new publication option"](http://www.sciencemag.org/careers/2015/12/register-your-study-new-publication-option), about OSF initiative to pre-publish experimental protocol/design
 
-
+- AMP 2011, Applied Mathematics Perspectives workshop on "Reproducible Research: Tools and Strategies for Scientific Computing" by Victoria Stodden and others. Videos, slides. [http://stodden.net/AMP2011/](http://stodden.net/AMP2011/)
 
  
