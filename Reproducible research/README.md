@@ -28,13 +28,10 @@
 
 - NSF own "Dissemination and Sharing of Research Results" [https://www.nsf.gov/bfa/dias/policy/dmp.jsp](https://www.nsf.gov/bfa/dias/policy/dmp.jsp)
 
-- How to Comply with Grants: Writing Data Management Plans and Providing Public Access from Margaret Henderson, VCU 
- [http://guides.library.vcu.edu/data/USpubaccess](http://guides.library.vcu.edu/data/USpubaccess)
-
-- Hadley Wickham' presentation about tidy data and tools. [Video](https://vimeo.com/33727555)
+- How to Comply with Grants: Writing Data Management Plans and Providing Public Access from Margaret Henderson, VCU [http://guides.library.vcu.edu/data/USpubaccess](http://guides.library.vcu.edu/data/USpubaccess)
 
 - Science blog post ["Register your study as a new publication option"](http://www.sciencemag.org/careers/2015/12/register-your-study-new-publication-option), about OSF initiative to pre-publish experimental protocol/design
 
 - AMP 2011, Applied Mathematics Perspectives workshop on "Reproducible Research: Tools and Strategies for Scientific Computing" by Victoria Stodden and others. Videos, slides. [http://stodden.net/AMP2011/](http://stodden.net/AMP2011/)
 
- 
+- Course Materials for the Fall 2013 Edition of Stat 157: Reproducible and Collaborative Data Science [https://github.com/stat157/fall-2013](https://github.com/stat157/fall-2013)
