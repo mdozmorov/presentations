@@ -35,3 +35,5 @@
 - AMP 2011, Applied Mathematics Perspectives workshop on "Reproducible Research: Tools and Strategies for Scientific Computing" by Victoria Stodden and others. Videos, slides. [http://stodden.net/AMP2011/](http://stodden.net/AMP2011/)
 
 - Course Materials for the Fall 2013 Edition of Stat 157: Reproducible and Collaborative Data Science [https://github.com/stat157/fall-2013](https://github.com/stat157/fall-2013)
+
+- INSERM Reproducibility in Computational and Experimental Mathematics [workshop](https://icerm.brown.edu/tw12-5-rcem/), [slides](https://icerm.brown.edu/tw12-5-rcem/), [video](https://icerm.brown.edu/video_archive/#/search), and [Victoria Stodden' INSERM report]() with practical recommendations
