@@ -28,6 +28,8 @@
 
 - NSF own "Dissemination and Sharing of Research Results" [https://www.nsf.gov/bfa/dias/policy/dmp.jsp](https://www.nsf.gov/bfa/dias/policy/dmp.jsp)
 
+- ORI (Office of Research Integrity) page with misconduct case summaries [http://ori.hhs.gov/case_summary](http://ori.hhs.gov/case_summary). Wikipedia on [Scientific Misconduct](https://en.wikipedia.org/wiki/Scientific_misconduct).
+
 - How to Comply with Grants: Writing Data Management Plans and Providing Public Access from Margaret Henderson, VCU [http://guides.library.vcu.edu/data/USpubaccess](http://guides.library.vcu.edu/data/USpubaccess)
 
 - Science blog post ["Register your study as a new publication option"](http://www.sciencemag.org/careers/2015/12/register-your-study-new-publication-option), about OSF initiative to pre-publish experimental protocol/design
