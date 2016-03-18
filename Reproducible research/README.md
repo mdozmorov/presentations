@@ -39,3 +39,7 @@
 - Course Materials for the Fall 2013 Edition of Stat 157: Reproducible and Collaborative Data Science [https://github.com/stat157/fall-2013](https://github.com/stat157/fall-2013)
 
 - INSERM Reproducibility in Computational and Experimental Mathematics [workshop](https://icerm.brown.edu/tw12-5-rcem/), [slides](https://icerm.brown.edu/tw12-5-rcem/), [video](https://icerm.brown.edu/video_archive/#/search), and [Victoria Stodden' INSERM report]() with practical recommendations
+
+- Statistical Challenges in Assessing and Fostering the Reproducibility of Scientific Results: Summary of a Workshop (2016) [Book, 120 pages, PDF available](http://www.nap.edu/read/21915/chapter/1)
+
+- Wilkinson MD: The FAIR Guiding Principles for scientific data management and stewardship. [Paper outlining principles of open data management/sharing, PDF and links](http://www.nature.com/articles/sdata201618)
