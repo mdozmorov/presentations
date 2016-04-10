@@ -6,6 +6,7 @@
 
 `Reproducible research.pdf` - handounts of the reproducible research seminar
 
+
 # Videos
 
 - "Reproducible Research: The Time is Now" - webinar by Keith Baggerly, ENAR, November 20, 2015. [Link](http://www3.mdanderson.org/streams/FullVideoPlayer.cfm?mediaID=8979D134-6B1A-4334-A2FF-3A74ABE22C5A)
@@ -20,6 +21,7 @@
 
 - INSERM Reproducibility in Computational and Experimental Mathematics [workshop](https://icerm.brown.edu/tw12-5-rcem/), [slides](https://icerm.brown.edu/tw12-5-rcem/), [video](https://icerm.brown.edu/video_archive/#/search), and [Victoria Stodden' INSERM report]() with practical recommendations
 
+
 # Courses
 
 - Tools for reproducible research by Karl Broman [http://kbroman.org/Tools4RR/](http://kbroman.org/Tools4RR/), [Schedule](http://kbroman.org/Tools4RR/pages/schedule.html), [lots of educational links](http://kbroman.org/Tools4RR/pages/resources.html), [Git repository](https://github.com/kbroman/Tools4RR/tree/master)
@@ -32,6 +34,7 @@
 
 - [References and further reading](https://ropensci.github.io/reproducibility-guide/sections/references/) collection, from [Reproducibility in Science](https://ropensci.github.io/reproducibility-guide/) guide by [rOpenSci](http://ropensci.org/) project.
 
+
 # Guidelines
 
 - NIH own "Principles and Guidelines for Reporting Preclinical Research" [https://www.nih.gov/research-training/rigor-reproducibility/principles-guidelines-reporting-preclinical-research](https://www.nih.gov/research-training/rigor-reproducibility/principles-guidelines-reporting-preclinical-research)
@@ -41,6 +44,11 @@
 - How to Comply with Grants: Writing Data Management Plans and Providing Public Access from Margaret Henderson, VCU [http://guides.library.vcu.edu/data/USpubaccess](http://guides.library.vcu.edu/data/USpubaccess)
 
 - Wilkinson MD: The FAIR Guiding Principles for scientific data management and stewardship. [Paper outlining principles of open data management/sharing, PDF and links](http://www.nature.com/articles/sdata201618)
+
+- Enhancing the QUAlity and Transparency Of health Research, [EQUATOR-Network](http://www.equator-network.org/) - large collection of > 300 reporting guidelines
+
+- TRIPOD guidelines, for clinical predictive models, diagnostic and prognostic. Encompasses multivariate models with binary/continuous output. [Transparent Reporting of a multivariable prediction model for Individual Prognosis Or Diagnosis](https://www.tripod-statement.org/)
+
 
 # Misc
 
