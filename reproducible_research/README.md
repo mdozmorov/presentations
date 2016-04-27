@@ -2,8 +2,8 @@
 
 - `Pubmed_reproducible_vs_retraction.R` - a script to create barplots of "reproducible research" and "retraction" PubMed entries. Requires [MDmisc](https://github.com/mdozmorov/MDmisc) package
 - `reproducible_research_01-29-2016_abstract.txt` - an announcement of the reproducible research seminar
-- `reproducible_research_01-29-2016.pdf` - handounts of the reproducible research seminar
-
+- `reproducible_research_01-29-2016.pdf` - reproducible research seminar in the Biostatistics department
+- `reproducible_research_04-27-2016.pdf` - reproducible research seminar in the Massey Cancer Center
 
 # Videos
 
