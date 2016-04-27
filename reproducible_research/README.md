@@ -1,10 +1,8 @@
 # Materials and links related to reproducible research topic
 
-`Pubmed_reproducible_vs_retraction.R` - a script to create barplots of "reproducible research" and "retraction" PubMed entries. Requires [MDmisc](https://github.com/mdozmorov/MDmisc)
-
-`Reproducible research abstract.txt` - an announcement of the reproducible research seminar
-
-`Reproducible research.pdf` - handounts of the reproducible research seminar
+- `Pubmed_reproducible_vs_retraction.R` - a script to create barplots of "reproducible research" and "retraction" PubMed entries. Requires [MDmisc](https://github.com/mdozmorov/MDmisc) package
+- `reproducible_research_01-29-2016_abstract.txt` - an announcement of the reproducible research seminar
+- `reproducible_research_01-29-2016.pdf` - handounts of the reproducible research seminar
 
 
 # Videos
