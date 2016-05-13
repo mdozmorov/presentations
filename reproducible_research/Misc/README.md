@@ -6,4 +6,3 @@
 
 - `Statistical Challenges in Assessing and Fostering the Reproducibility of Scientific Results.pdf` -  Summary of a Workshop (2016) [Book, 120 pages](http://www.nap.edu/read/21915/chapter/1)
 
-- `Lab_Notebook_508_(new).pdf` - Slides from the OITE Webinar: "Keeping a Lab Notebook", [Download](https://www.training.nih.gov/assets/Lab_Notebook_508_(new).pdf))
