@@ -2,6 +2,14 @@
 
 Each folder contains its own README file.
 
-## Reproducible research
+## `GenomeRunner`
 
-Reproducible research-related material
+GenomeRunner-related presentations
+
+## `misc`
+
+Presentations of interest from others
+
+## `reproducible_research`
+
+Reproducible research-related presentations
