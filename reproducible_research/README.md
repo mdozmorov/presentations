@@ -35,7 +35,7 @@
 
 # Guidelines
 
-- NIH own "Principles and Guidelines for Reporting Preclinical Research" [https://www.nih.gov/research-training/rigor-reproducibility/principles-guidelines-reporting-preclinical-research](https://www.nih.gov/research-training/rigor-reproducibility/principles-guidelines-reporting-preclinical-research)
+- NIH own "Principles and Guidelines for Reporting Preclinical Research" [https://www.nih.gov/research-training/rigor-reproducibility/principles-guidelines-reporting-preclinical-research](https://www.nih.gov/research-training/rigor-reproducibility/principles-guidelines-reporting-preclinical-research), and a one-pager "Guide to Rigor and Reproducibility", [blog post](https://nexus.od.nih.gov/all/2016/07/31/your-one-page-guide-to-rigor-and-reproducibility/) and [PDF](https://grants.nih.gov/grants/RigorandReproducibilityChart508.pdf)
 
 - NSF own "Dissemination and Sharing of Research Results" [https://www.nsf.gov/bfa/dias/policy/dmp.jsp](https://www.nsf.gov/bfa/dias/policy/dmp.jsp)
 
