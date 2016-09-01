@@ -1,2 +1,8 @@
+.DS_Store
 *.pptx
 *.pdf
+*.Rproj
+.Rproj.user
+.Rhistory
+
+

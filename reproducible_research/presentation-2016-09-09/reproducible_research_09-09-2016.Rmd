@@ -1,0 +1,660 @@
+---
+title: "Reproducible research in data science"
+subtitle: ""
+author: "Mikhail Dozmorov"
+output:
+    ioslides_presentation:
+        widescreen: FALSE
+        transition: slower
+        fig_width: 10
+        css: 
+         - css/fonts.css
+         - css/custom.css
+         - css/title-slide.css
+         - css/slide-background.css
+        includes: 
+            before_body: html/title.html
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+```
+
+## Overview
+
+- What is reproducible research?
+- Why do we care?
+- Why reproducibility questions arise?
+- The cost of reproducibility
+- Reproducibility and statistics
+- Current status of reproducibility
+- What can we do?
+
+## What is reproducible research?
+
+<center>
+  ![](img/reproducibility-small.jpg)
+</center>
+
+<div class="footer">
+http://blog.f1000research.com/2014/04/04/reproducibility-tweetchat-recap/ 
+</div>
+
+## Reproducibility and scientific progress
+
+- Science is the systematic enterprise of gathering knowledge about the universe and organizing and condensing that knowledge into testable laws and theories 
+
+>- The success and credibility of science are anchored in the willingness of scientists to **expose their ideas and results to independent testing and replication by other scientists.**
+
+<div class="footer">
+http://www.aps.org/policy/statements/99_6.cfm 
+</div>
+
+## What is reproducible research?
+
+- Reproducibility
+- Replicability
+- Repeatability
+- Reliability
+- Robustness
+- Generalizability
+
+## What is reproducible research?
+
+- **Transparency**
+
+>- **Open Science**
+
+>- <span style="font-weight:bold; color:red;">TRUTH</span>
+
+## What is reproducible research?
+
+Reproducible research is the ultimate standard for strengthening scientific evidence by independent:
+
+- Investigators
+- Data 
+- Analytical methods 
+- Laboratories 
+- Instruments 
+
+# Why do we care?
+
+## More data = more chance for errors 
+
+- High-throughput biology generates volumes of data
+- Data-generating technologies are increasingly used to make clinical recommendations and treatment decisions
+- A problem may be overlooked .. Published .. Get in clinical trials
+
+## More data = more chance for errors 
+
+<center>
+![](img/TCGA.png)
+</center>
+
+<div class="footer-2">
+Muir et al., “The Real Cost of Sequencing.” Genome Biol. 2016
+
+https://genomebiology.biomedcentral.com/articles/10.1186/s13059-016-0917-0
+</div>
+
+## Poor medical tests getting to patients
+
+- OvaSure diagnostic test for ovarian cancer
+
+<center>
+![](img/missing_the_mark.png)
+</center>
+
+<div class="footer-2">
+Buchen, “Cancer: Missing the mark” Nature 2011
+
+http://www.nature.com/news/2011/110323/full/471428a.html
+</div>
+
+## Clinical trials based on flawed and fraudulent data
+
+<span class="smaller">
+- Described drug response “gene signatures” in NCI60 cell lines
+</span>
+
+<span class="smaller">
+- Demonstrated these “signatures” correspond to patient-specific signatures and can be used to predict patient response to the drugs
+</span>
+
+<center>
+![](img/potti.png)
+</center>
+
+<div class="footer-2">
+Retraction Watch "The Importance of Being Reproducible: Keith Baggerly tells the Anil Potti story" 2011
+
+http://retractionwatch.com/2011/05/04/the-importance-of-being-reproducible-keith-baggerly-tells-the-anil-potti-story/
+</div>
+
+## Clinical trials based on flawed and fraudulent data
+
+<span class="smaller">
+- Described drug response “gene signatures” in NCI60 cell lines
+</span>
+
+<span class="smaller">
+- Demonstrated these “signatures” correspond to patient-specific signatures and can be used to predict patient response to the drugs
+</span>
+
+<center>
+![](img/potti.png)
+![](img/potti2.png)
+</center>
+
+## Biostatisticians spot errors
+
+<center>
+![](img/baggerly_coombes.png)
+</center>
+
+<div class="footer-2">
+New York Times “How Bright Promise in Cancer Testing Fell Apart” 2011
+
+http://www.nytimes.com/2011/07/08/health/research/08genes.html
+</div>
+
+## “Off-by-one” error
+
+**Published**
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+**Replicated**
+
+<pre style="font-size: 130%; line-height: 200%;">
+...
+[3,] 1881_at       1882_g_at
+[4,] 31321_at      31322_at
+[5,] 31725_s_at    31726_at
+[6,] 32307_r_at    32308_r_at
+...
+</pre>
+
+## New signatures continue to be published
+
+<center>
+![](img/potti3.png)
+![](img/potti4.png)
+</center>
+
+## Initial data
+
+<div class="columns-2">
+<ul style="font-family: monospace;">
+**Sample**&nbsp;&nbsp;&nbsp;**Response** 
+GSM44303 RES 
+GSM44304 RES 
+GSM9653&nbsp; RES 
+GSM9653&nbsp; RES 
+GSM9654&nbsp; RES 
+GSM9655&nbsp; RES 
+GSM9656&nbsp; RES 
+GSM9657&nbsp; RES 
+GSM9658&nbsp; SEN 
+GSM9658&nbsp; SEN
+**RES/SEN** - resistant/sensitive
+</ul>
+<ul style="font-family: monospace;">
+&nbsp;
+</ul>
+</div>
+
+## Initial data
+
+<div class="columns-2">
+<ul style="font-family: monospace;">
+**Sample**&nbsp;&nbsp;&nbsp;**Response** 
+GSM44303 RES 
+GSM44304 RES 
+**GSM9653**&nbsp; **RES** 
+**GSM9653**&nbsp; **RES** 
+GSM9654&nbsp; RES 
+GSM9655&nbsp; RES 
+GSM9656&nbsp; RES 
+GSM9657&nbsp; RES 
+**GSM9658**&nbsp; **SEN** 
+**GSM9658**&nbsp; **SEN**
+**RES/SEN** - resistant/sensitive
+</ul>
+<ul style="font-family: monospace;">
+&nbsp;
+</ul>
+</div>
+
+
+## More data added
+
+<div class="columns-2">
+<ul style="font-family: monospace;">
+**Sample**&nbsp;&nbsp;&nbsp;**Response** 
+GSM44303 RES 
+GSM44304 RES 
+**GSM9653**&nbsp; **RES** 
+**GSM9653**&nbsp; **RES** 
+GSM9654&nbsp; RES 
+GSM9655&nbsp; RES 
+GSM9656&nbsp; RES 
+GSM9657&nbsp; RES 
+**GSM9658**&nbsp; **SEN** 
+**GSM9658**&nbsp; **SEN**
+**RES/SEN** - resistant/sensitive
+</ul>
+<ul style="font-family: monospace;">
+GSM9694 RES 
+GSM9695 RES 
+GSM9696 RES 
+GSM9698 RES 
+GSM9699 SEN 
+GSM9701 RES 
+GSM9708 RES 
+GSM9708 SEN 
+GSM9709 RES 
+GSM9711 RES 
+</ul>
+</div>
+
+
+
+## More data added
+
+<div class="columns-2">
+<ul style="font-family: monospace;">
+**Sample**&nbsp;&nbsp;&nbsp;**Response** 
+GSM44303 RES 
+GSM44304 RES 
+**GSM9653**&nbsp; **RES** 
+**GSM9653**&nbsp; **RES** 
+GSM9654&nbsp; RES 
+GSM9655&nbsp; RES 
+GSM9656&nbsp; RES 
+GSM9657&nbsp; RES 
+**GSM9658**&nbsp; **SEN** 
+**GSM9658**&nbsp; **SEN**
+**RES/SEN** - resistant/sensitive
+</ul>
+<ul style="font-family: monospace;">
+GSM9694 RES 
+GSM9695 RES 
+GSM9696 RES 
+GSM9698 RES 
+GSM9699 SEN 
+GSM9701 RES 
+**GSM9708** **RES** 
+**GSM9708** **SEN** 
+GSM9709 RES 
+GSM9711 RES 
+</ul>
+</div>
+
+
+## Summary of the Duke case
+
+- A total of 162 co-authors
+- 40 papers
+- Two-thirds are partially or completely retracted
+
+<center>
+![](img/the_cancer_letter_top.png)
+![](img/the_cancer_letter.png)
+</center>
+
+## IOM guidelines on translational omics
+
+<center>
+![](img/IOM.png)
+</center>
+
+<div style="font-size: 50%;">
+http://www.nationalacademies.org/hmd/reports/2012/evolution-of-translational-omics.aspx
+
+- Kaiser J “Clinical medicine. Biomarker tests need closer scrutiny, IOM concludes.” Science 2012
+
+http://science.sciencemag.org/content/335/6076/1554.long
+
+- McShane LM et.al. “Criteria for the use of omics-based predictors in clinical trials.” Nature 2013
+
+http://www.nature.com/nature/journal/v502/n7471/full/nature12564.html
+</div>
+
+## PubMed stats on “Reproducible research” vs. “Retraction”
+
+&nbsp;&nbsp;&nbsp;
+**“Reproducible research”**
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+**“Retraction”**
+
+<div class="columns-2">
+<ul>
+![](img/PubMed_Reproducible.png)
+</ul>
+<ul>
+![](img/PubMed_Retraction.png)
+</ul>
+</div>
+
+<div class="footer">
+Retraction Watch http://retractionwatch.com/
+</div>
+
+# The cost of reproducibility
+
+<div class="midcenter" style="margin-left:-240px; margin-top:-300px;">
+![](img/cost_of_reproducibility.png)
+</div>
+
+## Irreproducfibility ranges from 51% to 89%
+
+<center>
+![](img/irreproducibility_bar.png)
+</center>
+
+<div class="footer-2">
+Leonard Freedman, Iain Cockburn, and Timothy Simcoe, “The Economics of Reproducibility in Preclinical Research.” PLOS Biol 2015
+
+http://journals.plos.org/plosbiology/article?id=10.1371/journal.pbio.1002165
+</div>
+
+## Cost of irreproducibility
+
+<center>
+![](img/irreproducibility_chart.png)
+</center>
+
+# Why reproducibility questions arise?
+
+<div class="midcenter" style="margin-left:-220px; margin-top:-300px;">
+![](img/p-value.png)
+</div>
+
+## Patterns in the noise
+
+- Humans are good at recognizing patterns
+
+<div style="font-size: 80%;">
+Human beings do not have very many natural defenses. We are not all that fast, and we are not all that strong. We do not have claws or fangs or body armor. We cannot spit venom. We cannot camouflage ourselves. And we cannot fly. Instead, we survive by means of our wits. Our minds are quick. **We are wired to detect patterns** and respond to opportunities and threats without much hesitation.
+
+- Nate Silver
+</div>
+
+<div class="midcenter" style="margin-left: 270px; margin-top: 50px;">
+![](img/nate_silver.png)
+</div>
+
+<div class="footer-2">
+Nate Silver “The Signal and the Noise: Why So Many Predictions Fail--but Some Don't” 2015
+
+https://www.amazon.com/Signal-Noise-Many-Predictions-Fail-but/dp/0143125087
+</div>
+
+## Patterns in the noise
+
+- Humans are good at recognizing patterns
+
+<div class="columns-2">
+<ul>
+![](img/captcha.png)
+![](img/captcha2.png)
+</ul>
+<ul>
+&nbsp;
+</ul>
+</div>
+
+<div class="footer-2">
+http://neuralnetworksanddeeplearning.com/chap1.html
+
+http://www.npr.org/templates/story/story.php?storyId=130594039
+</div>
+
+## Patterns in the noise
+
+- Humans are good at recognizing patterns
+
+<div class="columns-2">
+<ul>
+![](img/captcha.png)
+![](img/captcha2.png)
+</ul>
+<ul>
+![](img/captcha3.png)
+</ul>
+</div>
+
+<div class="footer-2">
+http://neuralnetworksanddeeplearning.com/chap1.html
+
+http://www.npr.org/templates/story/story.php?storyId=130594039
+</div>
+
+## Irreproducibility in high-throughput biology {.small}
+
+- **Our intuition about patterns in high dimensional data quickly drops with the increased dimensionality of the data**
+
+- We rely on computation to uncover patterns
+
+- P values, the ‘gold standard’ of statistical validity, are not as reliable as many researchers assume.
+
+## The chance of being wrong
+
+<div style="font-size: 80%;">
+- **The probability of irreproducibility** of studies with p-values in the range 0.005 to 0.05 **is roughly 0.33**
+</div>
+
+<center>
+![](img/probability_wrong.png)
+</center>
+
+<div style="font-size: 25%;">
+- Regina Nuzzo, “Scientific Method: Statistical errors” Nature 2014 http://www.nature.com/news/scientific-method-statistical-errors-1.14700
+- Dennis Boos and Leonard Stefanski “P-value precision and reproducibility” Am Statistician, 2001 http://www.tandfonline.com/doi/abs/10.1198/tas.2011.10129
+</div>
+
+## The chance of being wrong
+
+<center>
+![](img/ioannidis.png)
+</center>
+
+<div style="font-size: 60%;">
+http://journals.plos.org/plosmedicine/article?id=10.1371/journal.pmed.0020124
+
+- Alex Tabarrok “Why Most Published Research Findings are False” 2005
+
+http://marginalrevolution.com/marginalrevolution/2005/09/why_most_publis.html
+</div>
+
+## The chance of being wrong {.smaller}
+
+1. In evaluating any study try to take into account the amount of background noise.  That is, remember that the more hypotheses which are tested and the less selection which goes into choosing hypotheses the more likely it is that you are looking at noise.
+2. Bigger samples are better.  (But note that even big samples won't help to solve the problems of observational studies which is a whole other problem). 
+3. Small effects are to be distrusted.
+4. Multiple sources and types of evidence are desirable.
+5. Evaluate literatures not individual papers.
+6. Trust empirical papers which test other people's theories more than empirical papers which test the author's theory.
+7. As an editor or referee, don't reject papers that fail to reject the null. 
+
+&nbsp;
+
+<div style="font-size: 40%;">
+- John Ioannidis “Why Most Published Research Findings Are False” PLOS Medicine 2005
+
+http://journals.plos.org/plosmedicine/article?id=10.1371/journal.pmed.0020124
+</div>
+
+## Understanding the p-value
+
+![](img/ASA.png)
+<div class="midcenter" style="margin-left: 200px; margin-top: -200px;">
+![](img/p-value_no.png)
+</div>
+
+&nbsp;
+
+<div style="font-size: 40%;">
+- Ronald Wasserstein and Nicole Lazar “The ASA's statement on p-values: context, process, and purpose” Am Stat 2016
+
+http://amstat.tandfonline.com/doi/abs/10.1080/00031305.2016.1154108
+
+- Monya Baker “Statisticians issue warning over misuse of P value” Nature 2016
+
+http://www.nature.com/news/statisticians-issue-warning-over-misuse-of-p-values-1.19503
+</div>
+
+## Understanding the p-value {.smaller}
+
+1. P-values can indicate how incompatible the data are with a specified statistical model.
+2. P-values do not measure the probability that the studied hypothesis is true, or the probability that the data were produced by random chance alone.
+3. Scientific conclusions and business or policy decisions should not be based only on whether a p-value passes a specific threshold.
+4. Proper inference requires full reporting and transparency.
+5. A p-value, or statistical significance, does not measure the size of an effect or the importance of a result.
+6. By itself, a p-value does not provide a good measure of evidence regarding a model or hypothesis.
+
+## P-value warning: consult a statistician before the experiment
+
+<center>
+![](img/fisher.png)
+</center>
+
+# Current status of reproducibility
+
+<center>
+![](img/badges.png)
+</center>
+
+## Focus on preclinical research
+
+<center>
+![](img/preclinical.png)
+</center>
+
+<div class="footer-2">
+- Glenn Begley and Lee Ellis, “Drug Development. Raise standards for preclinical cancer research” Nature 2012
+
+http://www.nature.com/nature/journal/v483/n7391/full/483531a.html
+</div>
+
+## Focus on preclinical research
+
+<center>
+![](img/preclinical2.png)
+</center>
+
+<div class="footer-2">
+- Francis Collins and Lawrence Tabak, “Policy: NIH Plans to Enhance Reproducibility.” Nature 2014
+
+http://www.nature.com/news/policy-nih-plans-to-enhance-reproducibility-1.14586
+</div>
+
+## NIH focus on openness
+
+<center>
+![](img/NIH.png)
+</center>
+
+<div class="footer">
+https://grants.nih.gov/reproducibility/index.htm
+</div>
+
+## NIH focus on openness {.smaller}
+
+- **Public Access Policy**
+
+https://publicaccess.nih.gov/
+
+- **Data Sharing Policies**
+
+https://www.nlm.nih.gov/NIHbmic/nih_data_sharing_policies.html
+
+- **Genomics Data Sharing (GDS)**
+
+https://gds.nih.gov/03policy2.html
+
+- **Model Organism Sharing Policy**
+
+https://grants.nih.gov/grants/policy/model_organism/
+
+- **Research Tools Policy**
+
+https://grants.nih.gov/grants/intell-property_64FR72090.pdf
+
+## NSF stance on openness
+
+<center>
+![](img/NSF.png)
+</center>
+
+<div class="footer">
+https://www.nsf.gov/bfa/dias/policy/dmp.jsp 
+</div>
+
+## NSF stance on openness
+
+- **Responsible Conduct of Research (RCR)**
+
+https://www.nsf.gov/bfa/dias/policy/rcr.jsp
+
+- **NSF Scientific Integrity Policy**
+
+https://www.nsf.gov/bfa/dias/policy/si/index.jsp
+
+## Reproducibility initiatives
+
+<center>
+![](img/Nature.png)
+</center>
+
+<div class="footer">
+http://www.nature.com/nmeth/journal/v10/n5/full/nmeth.2471.html
+</div>
+
+## Reproducibility initiatives
+
+<center>
+![](img/stodden.png)
+</center>
+
+<div class="footer">
+- Victoria Stodden et.al. “Reproducible Research” Yale Law School
+
+https://web.stanford.edu/~vcs/papers/RoundtableDeclaration2010.pdf
+</div>
+
+## Reproducibility initiatives
+
+<center>
+![](img/COS.png)
+</center>
+
+https://cos.io/
+
+<center>
+![](img/OSF.png)
+</center>
+
+https://osf.io/
+
+## Reproducibility guidelines {.smaller}
+
+- **ARRIVE** – Animal Research Reporting of In Vivo Experiments
+- **CONSORT** – Consolidated Standards of Reporting Trials
+- **SPIRIT** – Standard Protocol Items: Recommendations for Interventional Trials
+- **STROBE** – The Strengthening the Reporting of Observational Studies in Epidemiology
+- **(STARD) TRIPOD** – Transparent Reporting of a multivariable prediction model for Individual PROgnosis of Diagnosis
+- **REMARK** – REporting recommendations for tumour MARKer prognostic studies
+
+<center>
+![](img/equator.png)
+</center>
+
+<div style="font-size: 40%;">
+http://www.equator-network.org/ - over 300 reporting guidelines
+</div>
+
+
+
+
+
+
