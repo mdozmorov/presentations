@@ -161,10 +161,23 @@ http://www.nytimes.com/2011/07/08/health/research/08genes.html
 ## “Off-by-one” error
 
 **Published**
+
+<pre style="font-size: 130%; font-weight: bold; line-height: 200%;">
+...
+[3,] 1881_at      
+[4,] 31321_at   
+[5,] 31725_s_at 
+[6,] 32307_r_at    
+...
+</pre>
+
+## “Off-by-one” error
+
+**Published**
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 **Replicated**
 
-<pre style="font-size: 130%; line-height: 200%;">
+<pre style="font-size: 130%; font-weight: bold; line-height: 200%;">
 ...
 [3,] 1881_at       1882_g_at
 [4,] 31321_at      31322_at
@@ -199,6 +212,15 @@ GSM9658&nbsp; SEN
 </ul>
 <ul style="font-family: monospace;">
 &nbsp;
+&nbsp;
+&nbsp;
+&nbsp;
+&nbsp;
+&nbsp;
+&nbsp;
+&nbsp;
+&nbsp;
+&nbsp;
 </ul>
 </div>
 
@@ -209,17 +231,26 @@ GSM9658&nbsp; SEN
 **Sample**&nbsp;&nbsp;&nbsp;**Response** 
 GSM44303 RES 
 GSM44304 RES 
-**GSM9653**&nbsp; **RES** 
-**GSM9653**&nbsp; **RES** 
+***GSM9653***&nbsp; ***RES*** 
+***GSM9653***&nbsp; ***RES*** 
 GSM9654&nbsp; RES 
 GSM9655&nbsp; RES 
 GSM9656&nbsp; RES 
 GSM9657&nbsp; RES 
-**GSM9658**&nbsp; **SEN** 
-**GSM9658**&nbsp; **SEN**
+***GSM9658***&nbsp; ***SEN*** 
+***GSM9658***&nbsp; ***SEN***
 **RES/SEN** - resistant/sensitive
 </ul>
 <ul style="font-family: monospace;">
+&nbsp;
+&nbsp;
+&nbsp;
+&nbsp;
+&nbsp;
+&nbsp;
+&nbsp;
+&nbsp;
+&nbsp;
 &nbsp;
 </ul>
 </div>
@@ -232,14 +263,14 @@ GSM9657&nbsp; RES
 **Sample**&nbsp;&nbsp;&nbsp;**Response** 
 GSM44303 RES 
 GSM44304 RES 
-**GSM9653**&nbsp; **RES** 
-**GSM9653**&nbsp; **RES** 
+***GSM9653***&nbsp; ***RES*** 
+***GSM9653***&nbsp; ***RES*** 
 GSM9654&nbsp; RES 
 GSM9655&nbsp; RES 
 GSM9656&nbsp; RES 
 GSM9657&nbsp; RES 
-**GSM9658**&nbsp; **SEN** 
-**GSM9658**&nbsp; **SEN**
+***GSM9658***&nbsp; ***SEN*** 
+***GSM9658***&nbsp; ***SEN***
 **RES/SEN** - resistant/sensitive
 </ul>
 <ul style="font-family: monospace;">
@@ -265,14 +296,14 @@ GSM9711 RES
 **Sample**&nbsp;&nbsp;&nbsp;**Response** 
 GSM44303 RES 
 GSM44304 RES 
-**GSM9653**&nbsp; **RES** 
-**GSM9653**&nbsp; **RES** 
+***GSM9653***&nbsp; ***RES*** 
+***GSM9653***&nbsp; ***RES*** 
 GSM9654&nbsp; RES 
 GSM9655&nbsp; RES 
 GSM9656&nbsp; RES 
 GSM9657&nbsp; RES 
-**GSM9658**&nbsp; **SEN** 
-**GSM9658**&nbsp; **SEN**
+***GSM9658***&nbsp; ***SEN*** 
+***GSM9658***&nbsp; ***SEN***
 **RES/SEN** - resistant/sensitive
 </ul>
 <ul style="font-family: monospace;">
@@ -282,8 +313,8 @@ GSM9696 RES
 GSM9698 RES 
 GSM9699 SEN 
 GSM9701 RES 
-**GSM9708** **RES** 
-**GSM9708** **SEN** 
+***GSM9708*** ***RES*** 
+***GSM9708*** ***SEN*** 
 GSM9709 RES 
 GSM9711 RES 
 </ul>
@@ -429,23 +460,21 @@ http://neuralnetworksanddeeplearning.com/chap1.html
 http://www.npr.org/templates/story/story.php?storyId=130594039
 </div>
 
-## Irreproducibility in high-throughput biology {.small}
+## Irreproducibility in high-throughput biology
 
 - **Our intuition about patterns in high dimensional data quickly drops with the increased dimensionality of the data**
-
 - We rely on computation to uncover patterns
-
 - P values, the ‘gold standard’ of statistical validity, are not as reliable as many researchers assume.
 
 ## The chance of being wrong
 
-<div style="font-size: 80%;">
-- **The probability of irreproducibility** of studies with p-values in the range 0.005 to 0.05 **is roughly 0.33**
-</div>
-
 <center>
 ![](img/probability_wrong.png)
 </center>
+
+<div style="font-size: 80%;">
+- **The probability of irreproducibility** of studies with p-values in the range 0.005 to 0.05 **is roughly 0.33**
+</div>
 
 <div style="font-size: 25%;">
 - Regina Nuzzo, “Scientific Method: Statistical errors” Nature 2014 http://www.nature.com/news/scientific-method-statistical-errors-1.14700
@@ -493,7 +522,7 @@ http://journals.plos.org/plosmedicine/article?id=10.1371/journal.pmed.0020124
 
 &nbsp;
 
-<div style="font-size: 40%;">
+<div style="font-size: 50%;">
 - Ronald Wasserstein and Nicole Lazar “The ASA's statement on p-values: context, process, and purpose” Am Stat 2016
 
 http://amstat.tandfonline.com/doi/abs/10.1080/00031305.2016.1154108
@@ -616,7 +645,7 @@ http://www.nature.com/nmeth/journal/v10/n5/full/nmeth.2471.html
 ![](img/stodden.png)
 </center>
 
-<div class="footer">
+<div class="footer-2">
 - Victoria Stodden et.al. “Reproducible Research” Yale Law School
 
 https://web.stanford.edu/~vcs/papers/RoundtableDeclaration2010.pdf
