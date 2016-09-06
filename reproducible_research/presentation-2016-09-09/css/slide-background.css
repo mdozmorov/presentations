@@ -2,7 +2,7 @@
 slide,
 .overview slides >slide,
 .with-notes.popup slide {
-    background: #ffffff radial-gradient(circle farthest-corner at center center, #ffffff 0%, #cccccc 100%)repeat scroll 0% 0%;
+    background: #ffffff radial-gradient(circle farthest-corner at center center, #ffffff 0%, #e6e6e6 100%)repeat scroll 0% 0%;
 }
 
 /* overview and presenter mode */

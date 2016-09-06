@@ -1,6 +1,6 @@
 ---
-title: "Reproducible research in data science"
-subtitle: ""
+title: "Reproducible research"
+subtitle: "in data science"
 author: "Mikhail Dozmorov"
 output:
     ioslides_presentation:
@@ -35,8 +35,10 @@ knitr::opts_chunk$set(echo = FALSE)
 <center>
   ![](img/reproducibility-small.jpg)
 </center>
+&nbsp;
 
-<div class="footer">
+&nbsp;
+<div style="font-size: 40%;">
 http://blog.f1000research.com/2014/04/04/reproducibility-tweetchat-recap/ 
 </div>
 
@@ -46,7 +48,7 @@ http://blog.f1000research.com/2014/04/04/reproducibility-tweetchat-recap/
 
 >- The success and credibility of science are anchored in the willingness of scientists to **expose their ideas and results to independent testing and replication by other scientists.**
 
-<div class="footer">
+<div style="font-size: 40%;">
 http://www.aps.org/policy/statements/99_6.cfm 
 </div>
 
@@ -66,6 +68,18 @@ http://www.aps.org/policy/statements/99_6.cfm
 >- **Open Science**
 
 >- <span style="font-weight:bold; color:red;">TRUTH</span>
+
+&nbsp;
+
+&nbsp;
+
+&nbsp;
+
+<div style="font-size: 40%;">
+- Steve Goodman, Stanford, March 18, 2015
+
+https://youtu.be/DrlS4HXv-uA
+</div>
 
 ## What is reproducible research?
 
@@ -91,24 +105,12 @@ Reproducible research is the ultimate standard for strengthening scientific evid
 ![](img/TCGA.png)
 </center>
 
-<div class="footer-2">
-Muir et al., “The Real Cost of Sequencing.” Genome Biol. 2016
+&nbsp;
+
+<div style="font-size: 40%;">
+- Muir et al., “The Real Cost of Sequencing.” Genome Biol. 2016
 
 https://genomebiology.biomedcentral.com/articles/10.1186/s13059-016-0917-0
-</div>
-
-## Poor medical tests getting to patients
-
-- OvaSure diagnostic test for ovarian cancer
-
-<center>
-![](img/missing_the_mark.png)
-</center>
-
-<div class="footer-2">
-Buchen, “Cancer: Missing the mark” Nature 2011
-
-http://www.nature.com/news/2011/110323/full/471428a.html
 </div>
 
 ## Clinical trials based on flawed and fraudulent data
@@ -125,8 +127,9 @@ http://www.nature.com/news/2011/110323/full/471428a.html
 ![](img/potti.png)
 </center>
 
-<div class="footer-2">
-Retraction Watch "The Importance of Being Reproducible: Keith Baggerly tells the Anil Potti story" 2011
+&nbsp;
+<div style="font-size: 40%;">
+- Retraction Watch "The Importance of Being Reproducible: Keith Baggerly tells the Anil Potti story" 2011
 
 http://retractionwatch.com/2011/05/04/the-importance-of-being-reproducible-keith-baggerly-tells-the-anil-potti-story/
 </div>
@@ -152,8 +155,9 @@ http://retractionwatch.com/2011/05/04/the-importance-of-being-reproducible-keith
 ![](img/baggerly_coombes.png)
 </center>
 
-<div class="footer-2">
-New York Times “How Bright Promise in Cancer Testing Fell Apart” 2011
+&nbsp;
+<div style="font-size: 40%;">
+-  New York Times “How Bright Promise in Cancer Testing Fell Apart” 2011
 
 http://www.nytimes.com/2011/07/08/health/research/08genes.html
 </div>
@@ -193,6 +197,12 @@ http://www.nytimes.com/2011/07/08/health/research/08genes.html
 ![](img/potti4.png)
 </center>
 
+<div style="font-size: 40%;">
+-  The Importance of Reproducible Research in High-Throughput Biology, Keith Baggerly
+
+https://www.youtube.com/watch?v=7gYIs7uYbMo
+</div>
+
 ## Initial data
 
 <div class="columns-2">
@@ -211,16 +221,7 @@ GSM9658&nbsp; SEN
 **RES/SEN** - resistant/sensitive
 </ul>
 <ul style="font-family: monospace;">
-&nbsp;
-&nbsp;
-&nbsp;
-&nbsp;
-&nbsp;
-&nbsp;
-&nbsp;
-&nbsp;
-&nbsp;
-&nbsp;
+
 </ul>
 </div>
 
@@ -242,19 +243,9 @@ GSM9657&nbsp; RES
 **RES/SEN** - resistant/sensitive
 </ul>
 <ul style="font-family: monospace;">
-&nbsp;
-&nbsp;
-&nbsp;
-&nbsp;
-&nbsp;
-&nbsp;
-&nbsp;
-&nbsp;
-&nbsp;
-&nbsp;
+
 </ul>
 </div>
-
 
 ## More data added
 
@@ -287,8 +278,6 @@ GSM9711 RES
 </ul>
 </div>
 
-
-
 ## More data added
 
 <div class="columns-2">
@@ -320,7 +309,6 @@ GSM9711 RES
 </ul>
 </div>
 
-
 ## Summary of the Duke case
 
 - A total of 162 co-authors
@@ -338,7 +326,9 @@ GSM9711 RES
 ![](img/IOM.png)
 </center>
 
-<div style="font-size: 50%;">
+&nbsp;
+
+<div style="font-size: 40%;">
 http://www.nationalacademies.org/hmd/reports/2012/evolution-of-translational-omics.aspx
 
 - Kaiser J “Clinical medicine. Biomarker tests need closer scrutiny, IOM concludes.” Science 2012
@@ -348,6 +338,38 @@ http://science.sciencemag.org/content/335/6076/1554.long
 - McShane LM et.al. “Criteria for the use of omics-based predictors in clinical trials.” Nature 2013
 
 http://www.nature.com/nature/journal/v502/n7471/full/nature12564.html
+</div>
+
+## IOM guidelines on translational omics {.medium}
+
+- **Data/metadata** used to develop test should be made publicly available
+
+- The **computer code** and fully specified computational procedures used for development of the candidate omics-based test should be made sustainably available
+
+- "... the computer code ... will **encompass all of the steps of computational analysis**, including all data preprocessing steps ... All aspects of the analysis need to be transparently reported"
+
+&nbsp;
+
+<div style="font-size: 60%;>
+- Reproducible Research: Concepts and Ideas, Roger Peng
+
+https://www.youtube.com/watch?v=DfBSiOupI1I
+</div>
+
+## Why reproducibility of research issues arise?
+
+- Publish or perish
+
+<center>
+![](img/publish.png)
+</center>
+
+&nbsp;
+
+<div style="font-size: 40%;">
+- Glenn Begley et. al. "Robust research: Institutions must do their part for reproducibility" Nature 2015
+
+http://www.nature.com/news/robust-research-institutions-must-do-their-part-for-reproducibility-1.18259 
 </div>
 
 ## PubMed stats on “Reproducible research” vs. “Retraction”
@@ -366,8 +388,8 @@ http://www.nature.com/nature/journal/v502/n7471/full/nature12564.html
 </ul>
 </div>
 
-<div class="footer">
-Retraction Watch http://retractionwatch.com/
+<div style="font-size: 40%;">
+- Retraction Watch http://retractionwatch.com/
 </div>
 
 # The cost of reproducibility
@@ -376,14 +398,15 @@ Retraction Watch http://retractionwatch.com/
 ![](img/cost_of_reproducibility.png)
 </div>
 
-## Irreproducfibility ranges from 51% to 89%
+## Irreproducfibility ranges  ~51% - 89%
 
 <center>
 ![](img/irreproducibility_bar.png)
 </center>
 
-<div class="footer-2">
-Leonard Freedman, Iain Cockburn, and Timothy Simcoe, “The Economics of Reproducibility in Preclinical Research.” PLOS Biol 2015
+&nbsp;
+<div style="font-size: 40%;">
+- Leonard Freedman, Iain Cockburn, and Timothy Simcoe, “The Economics of Reproducibility in Preclinical Research.” PLOS Biol 2015
 
 http://journals.plos.org/plosbiology/article?id=10.1371/journal.pbio.1002165
 </div>
@@ -414,8 +437,12 @@ Human beings do not have very many natural defenses. We are not all that fast, a
 ![](img/nate_silver.png)
 </div>
 
-<div class="footer-2">
-Nate Silver “The Signal and the Noise: Why So Many Predictions Fail--but Some Don't” 2015
+&nbsp;
+
+&nbsp;
+
+<div style="font-size: 40%;">
+- Nate Silver “The Signal and the Noise: Why So Many Predictions Fail--but Some Don't” 2015
 
 https://www.amazon.com/Signal-Noise-Many-Predictions-Fail-but/dp/0143125087
 </div>
@@ -434,7 +461,7 @@ https://www.amazon.com/Signal-Noise-Many-Predictions-Fail-but/dp/0143125087
 </ul>
 </div>
 
-<div class="footer-2">
+<div style="font-size: 40%;">
 http://neuralnetworksanddeeplearning.com/chap1.html
 
 http://www.npr.org/templates/story/story.php?storyId=130594039
@@ -454,7 +481,7 @@ http://www.npr.org/templates/story/story.php?storyId=130594039
 </ul>
 </div>
 
-<div class="footer-2">
+<div style="font-size: 40%;">
 http://neuralnetworksanddeeplearning.com/chap1.html
 
 http://www.npr.org/templates/story/story.php?storyId=130594039
@@ -464,9 +491,9 @@ http://www.npr.org/templates/story/story.php?storyId=130594039
 
 - **Our intuition about patterns in high dimensional data quickly drops with the increased dimensionality of the data**
 - We rely on computation to uncover patterns
-- P values, the ‘gold standard’ of statistical validity, are not as reliable as many researchers assume.
+- P-values, the ‘gold standard’ of statistical validity, are not as reliable as many researchers assume.
 
-## The chance of being wrong
+## Effect size: the chance of being wrong
 
 <center>
 ![](img/probability_wrong.png)
@@ -487,7 +514,8 @@ http://www.npr.org/templates/story/story.php?storyId=130594039
 ![](img/ioannidis.png)
 </center>
 
-<div style="font-size: 60%;">
+&nbsp;
+<div style="font-size: 40%;">
 http://journals.plos.org/plosmedicine/article?id=10.1371/journal.pmed.0020124
 
 - Alex Tabarrok “Why Most Published Research Findings are False” 2005
@@ -495,23 +523,53 @@ http://journals.plos.org/plosmedicine/article?id=10.1371/journal.pmed.0020124
 http://marginalrevolution.com/marginalrevolution/2005/09/why_most_publis.html
 </div>
 
-## The chance of being wrong {.smaller}
+## The chance of being wrong {.medium}
 
-1. In evaluating any study try to take into account the amount of background noise.  That is, remember that the more hypotheses which are tested and the less selection which goes into choosing hypotheses the more likely it is that you are looking at noise.
-2. Bigger samples are better.  (But note that even big samples won't help to solve the problems of observational studies which is a whole other problem). 
-3. Small effects are to be distrusted.
-4. Multiple sources and types of evidence are desirable.
-5. Evaluate literatures not individual papers.
-6. Trust empirical papers which test other people's theories more than empirical papers which test the author's theory.
-7. As an editor or referee, don't reject papers that fail to reject the null. 
+1. Remember that the more hypotheses which are tested and the less selection which goes into choosing hypotheses - the more likely it is that you are looking at noise
+
+2. Bigger samples are better
+
+3. Small effects are to be distrusted
+
+4. Multiple sources and types of evidence are desirable
+
+5. Evaluate literatures not individual papers
+
+6. Trust empirical papers which test other people's theories more than empirical papers which test the author's theory
+
+7. As an editor or referee, don't reject papers that fail to reject the null
+
+## The choice of being right
+
+<center>
+![](img/ioannidis2.png)
+</center>
+
+&nbsp;
 
 &nbsp;
 
 <div style="font-size: 40%;">
-- John Ioannidis “Why Most Published Research Findings Are False” PLOS Medicine 2005
-
-http://journals.plos.org/plosmedicine/article?id=10.1371/journal.pmed.0020124
+http://journals.plos.org/plosmedicine/article?id=10.1371/journal.pmed.1001747
 </div>
+
+## The choice of being right {.medium}
+
+- Large-scale collaborative research
+
+- Adoption of replication culture
+
+- Registration (of studies, protocols, analysis codes, datasets, raw data, and results)
+
+- Sharing (of data, protocols, materials, software)
+
+- More appropriate statistical methods
+
+- Standardization of definitions and analyses
+
+- More stringent thresholds for claiming "breakthroughs"
+
+- ...
 
 ## Understanding the p-value
 
@@ -522,7 +580,7 @@ http://journals.plos.org/plosmedicine/article?id=10.1371/journal.pmed.0020124
 
 &nbsp;
 
-<div style="font-size: 50%;">
+<div style="font-size: 40%;">
 - Ronald Wasserstein and Nicole Lazar “The ASA's statement on p-values: context, process, and purpose” Am Stat 2016
 
 http://amstat.tandfonline.com/doi/abs/10.1080/00031305.2016.1154108
@@ -532,14 +590,19 @@ http://amstat.tandfonline.com/doi/abs/10.1080/00031305.2016.1154108
 http://www.nature.com/news/statisticians-issue-warning-over-misuse-of-p-values-1.19503
 </div>
 
-## Understanding the p-value {.smaller}
+## Understanding the p-value {.small}
 
-1. P-values can indicate how incompatible the data are with a specified statistical model.
-2. P-values do not measure the probability that the studied hypothesis is true, or the probability that the data were produced by random chance alone.
-3. Scientific conclusions and business or policy decisions should not be based only on whether a p-value passes a specific threshold.
-4. Proper inference requires full reporting and transparency.
-5. A p-value, or statistical significance, does not measure the size of an effect or the importance of a result.
-6. By itself, a p-value does not provide a good measure of evidence regarding a model or hypothesis.
+1. P-values can indicate how incompatible the data are with a specified statistical model
+
+2. P-values do not measure the probability that the studied hypothesis is true, or the probability that the data were produced by random chance alone
+
+3. Scientific conclusions and business or policy decisions should not be based only on whether a p-value passes a specific threshold
+
+4. Proper inference requires full reporting and transparency
+
+5. A p-value, or statistical significance, does not measure the size of an effect or the importance of a result
+
+6. By itself, a p-value does not provide a good measure of evidence regarding a model or hypothesis
 
 ## P-value warning: consult a statistician before the experiment
 
@@ -559,7 +622,11 @@ http://www.nature.com/news/statisticians-issue-warning-over-misuse-of-p-values-1
 ![](img/preclinical.png)
 </center>
 
-<div class="footer-2">
+&nbsp;
+
+&nbsp;
+
+<div style="font-size: 40%;">
 - Glenn Begley and Lee Ellis, “Drug Development. Raise standards for preclinical cancer research” Nature 2012
 
 http://www.nature.com/nature/journal/v483/n7391/full/483531a.html
@@ -571,7 +638,11 @@ http://www.nature.com/nature/journal/v483/n7391/full/483531a.html
 ![](img/preclinical2.png)
 </center>
 
-<div class="footer-2">
+&nbsp;
+
+&nbsp;
+
+<div style="font-size: 40%;">
 - Francis Collins and Lawrence Tabak, “Policy: NIH Plans to Enhance Reproducibility.” Nature 2014
 
 http://www.nature.com/news/policy-nih-plans-to-enhance-reproducibility-1.14586
@@ -583,11 +654,15 @@ http://www.nature.com/news/policy-nih-plans-to-enhance-reproducibility-1.14586
 ![](img/NIH.png)
 </center>
 
-<div class="footer">
+&nbsp;
+
+&nbsp;
+
+<div style="font-size: 40%;">
 https://grants.nih.gov/reproducibility/index.htm
 </div>
 
-## NIH focus on openness {.smaller}
+## NIH focus on openness {.medium}
 
 - **Public Access Policy**
 
@@ -609,13 +684,15 @@ https://grants.nih.gov/grants/policy/model_organism/
 
 https://grants.nih.gov/grants/intell-property_64FR72090.pdf
 
-## NSF stance on openness
+## NSF stance on openness {.medium}
 
 <center>
 ![](img/NSF.png)
 </center>
 
-<div class="footer">
+&nbsp;
+
+<div style="font-size: 40%;">
 https://www.nsf.gov/bfa/dias/policy/dmp.jsp 
 </div>
 
@@ -635,7 +712,7 @@ https://www.nsf.gov/bfa/dias/policy/si/index.jsp
 ![](img/Nature.png)
 </center>
 
-<div class="footer">
+<div style="font-size: 40%;">
 http://www.nature.com/nmeth/journal/v10/n5/full/nmeth.2471.html
 </div>
 
@@ -644,14 +721,20 @@ http://www.nature.com/nmeth/journal/v10/n5/full/nmeth.2471.html
 <center>
 ![](img/stodden.png)
 </center>
+&nbsp;
 
-<div class="footer-2">
+&nbsp;
+<div style="font-size: 40%;">
 - Victoria Stodden et.al. “Reproducible Research” Yale Law School
 
 https://web.stanford.edu/~vcs/papers/RoundtableDeclaration2010.pdf
+
+http://scitation.aip.org/content/aip/journal/cise/11/1/10.1109/MCSE.2009.19
+
+https://web.stanford.edu/~vcs/Talks.html
 </div>
 
-## Reproducibility initiatives
+## Reproducibility initiatives {.medium}
 
 <center>
 ![](img/COS.png)
@@ -665,7 +748,7 @@ https://cos.io/
 
 https://osf.io/
 
-## Reproducibility guidelines {.smaller}
+## Reproducibility guidelines {.medium}
 
 - **ARRIVE** – Animal Research Reporting of In Vivo Experiments
 - **CONSORT** – Consolidated Standards of Reporting Trials
@@ -678,12 +761,472 @@ https://osf.io/
 ![](img/equator.png)
 </center>
 
-<div style="font-size: 40%;">
+<div style="font-size: 60%;">
 http://www.equator-network.org/ - over 300 reporting guidelines
 </div>
 
+# What can we do | Tools to enhance reproducibility?
 
+<center>
+![](img/tools.png)
+</center>
 
+## Flavors of reproducibility
 
+- Empirical reproducibility
 
+- Computational reproducibility
 
+- Statistical reproducibility
+
+## Flavors of reproducibility
+
+- Empirical reproducibility
+
+- **Computational reproducibility**
+
+- Statistical reproducibility
+
+## Steps in reproducible research
+
+**The most important is the mindset, when starting, that the end product will be reproducible.**
+
+<div style="text-align:right;"> – Keith Baggerly</div>
+
+## Steps in reproducible research
+
+**The most important is the mindset, when starting, that the end product will be reproducible.**
+
+<div style="text-align:right;"> – Keith Baggerly</div>
+
+- Experimental design
+- Data generation
+- Data analysis
+- Results interpretation
+- Dissemination of results
+
+## Common approach | write report around results
+
+- Point and click approach: Use MS Excel for data entry/cleaning/preparation, and possibly statistical analysis
+
+<center>
+![](img/excel.png)
+</center>
+
+&nbsp;
+
+<div style="font-size: 40%;">
+- Zeeberg BR et al. “Mistaken identifiers: gene name errors can be introduced inadvertently when using Excel in bioinformatics” BMC Bioinformatics 2004
+
+http://bmcbioinformatics.biomedcentral.com/articles/10.1186/1471-2105-5-80
+</div>
+
+## Common approach | write report around results {.medium}
+
+**Problems**
+
+- With point-and-click, there’s no way to record/save the steps that generated the (copy/pasted) results
+
+- Data files are kept separately from the analysis code, and from reports
+
+- After modifications of one of the files, it becomes unclear which version corresponds exactly to the reported results
+
+- Every time something changes, you have to regenerate the figures/results/reports by hand – very time consuming
+
+## Data organization | in spreadsheets {.medium}
+
+- Explicitly import text data as text, numeric as numeric, etc.
+
+- One thing in a cell (avoid comments, color coding, etc.)
+
+- Choose comprehensive variable names. Use "_" instead of spaces. Be consistent
+
+- Save the data as CSV, comma-separated values
+
+- Avoid calculations
+
+>- <center>
+![](img/excel_stats.png)
+</center>
+
+<div style="font-size: 60%;">
+http://kbroman.org/dataorg/
+</div>
+
+## Better approach | write report that generates results {.medium}
+
+- The report is automated via code
+
+- Data is attached to the well-documented code
+
+- History of any changes should be preserved
+
+- The final report should be self-sufficient and reproducible with a single command
+
+## The aims of computational reproducibility
+
+- Fully automated report
+- Including code and data
+
+<center>
+![](img/peng.png)
+</center>
+
+<div style="font-size: 40%;">
+- Roger Peng “Reproducible Research in Computational Science” Science 2011
+
+http://science.sciencemag.org/content/334/6060/1226
+</div>
+
+## Know your Unux {.medium}
+
+- Unix is a family of operating systems and environments that exploits the power of linguistic abstractions to perform tasks
+
+- Unix users spend a lot of time at the command line
+
+- In Unix, a command is worth a thousand mouse clicks
+
+## Makefiles | reproducibility in command line {.medium}
+
+- **Make** is a tool which controls the workflow of generating target/result files from the dependencies/source files
+
+- Automates/documents a workflow
+
+- Intelligently handles the dependencies among data files, code
+
+- Accounts for the updates in data, code
+
+## Automate everything {.medium}
+
+- R – free/open source programming language
+
+- Runs on Windows, Mac, and Linux
+
+- Extensible with a very large collection of actively developing packages
+
+- Excellent graphics & report-creating capabilities
+
+<center>
+![](img/R.png)
+</center>
+
+## R is reimagined with RStudio
+
+<center>
+![](img/Rstudio.png)
+</center>
+
+## Self-documenting code {.medium}
+
+- A report containing a stream of **text and code** chunks
+
+- Each code chunk loads data, computes results, shows figures
+
+- Each text chunk explains how the code chunks work
+
+ - The resulting report is human- and machine readable
+
+&nbsp;
+
+&nbsp;
+
+&nbsp;
+
+&nbsp;
+
+<div class="midcenter" style="margin-left:200px; margin-top:50px;">
+![](img/knuth.png)
+</div>
+
+<div style="font-size: 60%;">
+- Donald E. Knuth "Literate Programming"
+
+http://comjnl.oxfordjournals.org/content/27/2/97.short
+</div>
+
+## Evolution of literate programming {.medium} 
+
+- **HTML** - HyperText Markup Language, used to create web pages. Developed in 1993
+
+- **LaTeX** – a typesetting system for production of technical/scientific documentation, PDF output. Developed in 1994
+
+- **Sweave** – a tool that allows embedding of the R code in LaTeX documents, PDF output. Developed in 2002
+
+- **reStructuredText** - a markup syntax that plays well with Python and Sphinx documentation. Developed in 2002
+
+- **Markdown** – a lightweight markup language for plain text formatting syntax. Easily converted to HTML. Developed in 2004
+
+## R Markdown basics
+
+<center>
+![](img/rmarkdown1.png)
+</center>
+
+## R Markdown basics
+
+<center>
+![](img/rmarkdown2.png)
+</center>
+
+&nbsp;
+
+&nbsp;
+
+<div style="font-size: 40%">
+- The R Markdown Cheat sheet
+
+http://shiny.rstudio.com/articles/rm-cheatsheet.html
+
+https://www.rstudio.com/wp-content/uploads/2015/03/rmarkdown-reference.pdf
+</div>
+
+## Literate programming with knitR {.medium}
+
+- **knitR** - a package for dynamic report generation written in R Markdown
+
+- Supports RMarkdown, LaTeX, MathJax. PDF, HTML, DOCX output
+
+- Developed in 2012 by Yihui Xie
+
+<center>
+![](img/knitr.png)
+</center>
+
+&nbsp;
+
+<div style="font-size: 60%;">
+http://yihui.name/knitr/ 
+</div>
+
+## Literate programming with knitR {.medium}
+
+- Code chunks separated by **```**. Inline code allowed
+
+- Graphics, code generated and external images
+
+- Tables, code generated and in RMarkdown format
+
+- Caching long code chunks
+
+- Code chunks and results output fully customizable
+
+## Literate programming with knitR
+
+- Mix markdown with code
+
+<center>
+![](img/rmarkdown3.png)
+</center>
+
+## Literate programming with knitr
+
+- "Knit" a report with one command
+
+<center>
+![](img/rmarkdown4.png)
+</center>
+
+<center>
+![](img/rmarkdown5.png)
+</center>
+
+Literate programming in other languages
+
+## Keeping history of changes 
+
+<center>
+![](img/final.png)
+</center>
+
+<div style="font-size: 40%;">
+http://www.phdcomics.com/comics/archive.php?comicid=1531
+</div>
+
+## Version control – what and when did you do {.medium}
+
+**Git and GitHub – version control system**
+
+- Each project stored in its own repository
+
+- Keep history of changes – track what you did
+
+- Ability to go back if something breaks
+
+- Branch out, go creative, then merge or revert the changes
+
+- Collaborate through merging changes from multiple people
+
+## Version control – what and when did you do
+
+- **Git** is a command line tool
+- **GitHub.com** is a web-based storage for your project repositories
+
+>- Subversion, https://subversion.apache.org/
+>- Mercurial, https://www.mercurial-scm.org/
+
+## Version control – what and when did you do
+
+- **Git** is a command line tool
+- **GitHub.com** is a web-based storage for your project repositories
+- <span style="font-family: monospace; font-weight:bold; color:red;">Git add</span> – add a file to version control system
+- <span style="font-family: monospace; font-weight:bold; color:red;">Git commit</span> – make a snapshot of current changes
+- <span style="font-family: monospace; font-weight:bold; color:red;">Git push/pull</span> – send/get 
+changes to/from GitHub
+
+## Reproducibility for other languages {.medium}
+
+**IPython/Jupyter Notebooks **
+
+- Combine text, equations, code, and graphics
+- Markdown support
+- Multiple languages support (>40)
+
+&nbsp;
+
+<center>
+![](img/jupyter.png)
+</center>
+
+<div style="font-size: 60%;">
+https://jupyter.org/
+</div>
+
+## Reproducibility for the whole project {.medium}
+
+**Research environments**
+
+- **Galaxy**, https://usegalaxy.org/
+
+- **GenePattern**, http://www.broadinstitute.org/cancer/software/genepattern/
+
+- **Taverna**, https://taverna.incubator.apache.org/introduction/
+
+## Reproducibility for the whole projects {.medium}
+
+**Docker** - an envelope (or container) for the whole project environment ~ lightweight virtual machine
+
+- OS-independent, portable application images
+- Preserves all application dependencies
+- Easy to distribute
+
+<center>
+![](img/docker.png)
+</center>
+
+&nbsp;
+
+<div style="font-size: 60%;">
+https://www.docker.com/
+</div>
+
+## Question your project {.medium}
+
+- Are the tables and figures reproducible from the code and data?
+
+- Does the code actually do what you think it does?
+
+- In addition to what was done, is it clear why it was done? (e.g., how parameter settings were chosen?)
+
+- Is your code scalable to accommodate more data/methods?
+
+## Six degrees of reproducibility {.medium}
+
+0. The results cannot be reproduced
+
+1. The results cannot seem to be reproduced
+
+2. Reproducibility requires extreme effort
+
+3. Reproducibility requires considerable effort
+
+4. Easy reproducibility, but require some proprietary source packages (MATLAB, SAS, etc.)
+
+5. The results can be easily reproduced by an independent researcher with at most 15 min of user effort, requiring only standard, freely available tools (C compiler, R, Python, etc.)
+
+## Reproducibility 101  {.medium}
+
+- Begin with the final product in mind
+
+- Use literate programming (self-documenting code)
+
+- History of changes via code versioning and sharing
+
+- Get basic statistics right
+
+- Set stringent cutoffs, correct p-values for multiple testing
+
+- Be critical, consider batch effects, visualize, do sanity checks, use random controls, cross-validation
+
+- Follow reporting guidelines
+
+# Learn more
+
+## Nature “Statistics for Biologists”
+
+<center>
+![](img/nature_stats.png)
+</center>
+
+<div style="font-size: 40%;">
+http://www.nature.com/collections/qghhqm 
+</div>
+
+## Reproducible research made simple
+
+<center>
+![](img/ref1.png)
+</center>
+
+<div style="font-size: 40%;">
+https://www.ncbi.nlm.nih.gov/pubmed/24204232 
+</div>
+
+&nbsp;
+
+<center>
+![](img/ref2.png)
+</center>
+
+<div style="font-size: 40%;">
+https://www.ncbi.nlm.nih.gov/pubmed/24415924 
+</div>
+
+## Practical reproducibility {.medium}
+
+- **BIOS 692 “Reproducible Research Tools”**
+
+- https://mdozmorov.github.io/BIOS692/ 
+
+- References https://mdozmorov.github.io/BIOS692/pages/references.html
+
+## Acknowledgements
+
+```{r echo=FALSE, message=FALSE, fig.height=5, fig.width=7}
+set.seed(3)
+library(wordcloud)
+acknowledgements <- c("Karl Broman", "Greg Wilson", "Software Carpentry", "RStudio", "Victoria Stodden", "Roger Peng", "Data Carpentry", "Center for Open Science", "Rafael Irizarry", "Jeff Leek")
+frequency_of_acknowledgements <- rep(1, length(acknowledgements))
+wordcloud(words = acknowledgements, freq = frequency_of_acknowledgements, min.freq = 1, scale=c(2.3, 3), rot.per = 0)
+```
+
+## Thank you | Questions?
+
+<div class="midcenter" style="margin-left: -300px; margin-top: -50px;">
+![](img/github.png)
+</div>
+
+&nbsp;
+
+&nbsp;
+
+&nbsp;
+
+&nbsp;
+
+&nbsp;
+
+&nbsp;
+
+<div style="font-size: 60%;">
+https://octodex.github.com/ &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; https://github.com/mdozmorov/presentations
+</div>

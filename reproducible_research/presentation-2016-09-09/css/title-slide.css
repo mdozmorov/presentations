@@ -18,6 +18,7 @@ slides > slide.title-slide h1 {
 slides > slide.title-slide h2 {
     font-size: 28pt;
     font-style: italic;
+    color: black;
 }
 /* date */
 slides > slide.title-slide h3 {
