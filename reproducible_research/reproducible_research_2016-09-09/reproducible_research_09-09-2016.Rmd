@@ -1,19 +1,20 @@
 ---
 title: "Reproducible research"
-subtitle: "in data science"
 author: "Mikhail Dozmorov"
+subtitle: in data science
 output:
-    ioslides_presentation:
-        widescreen: FALSE
-        transition: slower
-        fig_width: 10
-        css: 
-         - css/fonts.css
-         - css/custom.css
-         - css/title-slide.css
-         - css/slide-background.css
-        includes: 
-            before_body: html/title.html
+  ioslides_presentation:
+    css:
+    - css/fonts.css
+    - css/custom.css
+    - css/title-slide.css
+    - css/slide-background.css
+    fig_width: 10
+    includes:
+      before_body: html/title.html
+    transition: slower
+    widescreen: no
+  beamer_presentation: default
 ---
 
 ```{r setup, include=FALSE}
