@@ -9,10 +9,9 @@ output:
     - css/custom.css
     - css/title-slide.css
     - css/slide-background.css
-    fig_width: 10
     includes:
       before_body: html/title.html
-    transition: slower
+    transition: faster
     widescreen: no
   beamer_presentation: default
 ---
@@ -91,6 +90,57 @@ Reproducible research is the ultimate standard for strengthening scientific evid
 - Analytical methods 
 - Laboratories 
 - Instruments 
+
+## The beginning of reproducible research | Galileo Galilei {.medium}
+
+<center>
+![](img/galileo.png)
+</center>
+
+- Galileo’s notes directly integrated his data (drawings of Jupiter and its moons), key metadata (timing of each observation, weather, and telescope properties), and text (methods, analysis, and conclusions)
+
+<div style="font-size: 70%;">
+Two pages from Galilei's Sidereus Nuncius (“The Starry Messenger” or “The Herald of the Stars”), Venice, 1610.
+
+http://journals.plos.org/ploscompbiol/article?id=info:doi/10.1371/journal.pcbi.1003542
+</div>
+
+## The beginning of irreproducible research | Pierre de Fermat {.medium}
+
+- **Fermat's Last Theorem**: It is impossible to separate a cube into two cubes, or a fourth power into two fourth powers, or in general, any power higher than the second into two like powers. I have discovered a truly marvelous proof of this, which this margin is too narrow to contain (1637)
+
+- $$a^n + b^n = c^n$$ - for _n_ > 2, no three positive integers _a_, _b_, and _c_ exist
+
+- First complete proof by Andrew Wiles, published in 1995
+
+<div style="font-size: 70%;">
+Vandewalle, Kovacevic, and Vetterli, “Reproducible Research in Signal Processing.”
+
+http://ieeexplore.ieee.org/document/4815541/?arnumber=4815541
+</div>
+
+## History of reproducible research {.small}
+
+- Pythagoras (569–500 B.C.E.) - proofs
+- Euclid of Alexandria (325 B.C.E.–265 B.C.E.) - axioms and definitions
+- Eudoxus of Cnidus (408 B.C.E–355 B.C.E.) - theorems
+- William of Occam (1288 C.E.–1348 C.E.) - fewest assumptions
+
+<hr>
+- Jean Baptiste Joseph Fourier (1768–1830) - expansion of an arbitrary function into a trigonometric series
+- Evariste Galois (1812–1832) and Augustin Louis-Cauchy (1789–1857) - abstract algebra by inventing group theory.
+- Bernhard Riemann (1826–1866) - differential geometry, complex variable theory
+- Carl Jacobi (1804–1851), Ernst Kummer (1810–1893), Niels Henrik Abel (1802–1829) - number theory
+- Joseph Louis Lagrange (1736–1813), Cauchy - calculus of variations, classical mechanics, the implicit function theorem
+- Karl Weierstrass (1815–1897) - real and complex analysis with numerous examples and proofs
+
+&nbsp;
+
+<div style="font-size: 70%;">
+Evan Misshula
+
+https://github.com/EvanMisshula/hastac_2015_bof_cuny, https://github.com/EvanMisshula/rr
+</div>
 
 # Why do we care?
 
@@ -373,25 +423,19 @@ https://www.youtube.com/watch?v=DfBSiOupI1I
 http://www.nature.com/news/robust-research-institutions-must-do-their-part-for-reproducibility-1.18259 
 </div>
 
-## PubMed stats on “Reproducible research” vs. “Retraction”
+## PubMed stats | Reproducible Research
 
-&nbsp;&nbsp;&nbsp;
-**“Reproducible research”**
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-**“Retraction”**
+```{r cache=TRUE, echo = FALSE}
+library(ggplot2)
+MDmisc::get_pubmed_graph("reproducible research", yearstart = 1970)
+```
 
-<div class="columns-2">
-<ul>
-![](img/PubMed_Reproducible.png)
-</ul>
-<ul>
-![](img/PubMed_Retraction.png)
-</ul>
-</div>
+## PubMed stats | Reproducible Research
 
-<div style="font-size: 40%;">
-- Retraction Watch http://retractionwatch.com/
-</div>
+```{r cache=TRUE, echo = FALSE}
+library(ggplot2)
+MDmisc::get_pubmed_graph("retraction", yearstart = 1970)
+```
 
 # The cost of reproducibility
 
@@ -846,13 +890,12 @@ http://bmcbioinformatics.biomedcentral.com/articles/10.1186/1471-2105-5-80
 
 - Avoid calculations
 
->- <center>
+<center>
 ![](img/excel_stats.png)
-</center>
-
 <div style="font-size: 60%;">
 http://kbroman.org/dataorg/
 </div>
+</center>
 
 ## Better approach | write report that generates results {.medium}
 
@@ -1150,7 +1193,7 @@ https://www.docker.com/
 
 - Use literate programming (self-documenting code)
 
-- History of changes via code versioning and sharing
+- Keep history of changes via code versioning and sharing
 
 - Get basic statistics right
 
