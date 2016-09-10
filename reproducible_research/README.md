@@ -3,6 +3,7 @@
 - `reproducible_research_01-29-2016_abstract.txt` - an announcement of the reproducible research seminar
 - `reproducible_research_01-29-2016.pdf` - slides from reproducible research seminar in the Biostatistics department
 - `reproducible_research_04-27-2016.pdf` - slides from reproducible research seminar in the Massey Cancer Center
+- `reproducible_research_2016-09-09` - source code for reproducible research seminar in the Computer Science Department, VCU. See it in action [rpubs.com/mdozmorov/rr](rpubs.com/mdozmorov/rr)
 
 # Videos
 
