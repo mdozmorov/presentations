@@ -4,5 +4,11 @@
 *.Rproj
 .Rproj.user
 .Rhistory
-
+*.xlsx
+*.docx
+*.html
+Untitled*
+*_cache
+*_files
+rsconnect
 
