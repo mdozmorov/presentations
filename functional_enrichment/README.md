@@ -1,6 +1,6 @@
-This presentation is one in the Bioinformatics 101 seminar series
+This presentation is one in the Bioinformatics 101 seminar series. See it in action at http://rpubs.com/mdozmorov/functional_enrichment
 
-Enrichment analysis of genes and genomic regions, gene ontology, pathways and genomic annotation databases
+Enrichment analysis of genes and genomic regions, gene ontology, pathways and genomic annotation databases and tools
 
 ## Overview
 
