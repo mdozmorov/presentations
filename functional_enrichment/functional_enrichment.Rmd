@@ -139,8 +139,10 @@ output:
 
 ## Gene ontology {.larger}
 
-- An ontology is a formal (hierarchical) representation of concepts and the relationships between them
+- An ontology is a formal (hierarchical) representation of concepts and the relationships between them.
+
 - The objective of GO is to provide controlled vocabularies of terms for the description of gene products.
+
 - These terms are to be used as attributes of gene products, facilitating uniform queries across them.
 
 ## Gene ontology hierarchy {.larger}
@@ -307,7 +309,7 @@ Gene ontology describes multiple levels of detail of gene function.
 **Overrepresentation analysis (ORA)**
 
 1. Find a set of differentially expressed genes (DEGs)
-2. Are _DEGs in a set_ more common than _DEGS not in a set_?
+2. Are _DEGs in a set_ more common than _DEGs not in a set_?
 
 |             | In gene set     | Not in gene set    |
 |-------------|:---------------:|:------------------:|
@@ -316,7 +318,7 @@ Gene ontology describes multiple levels of detail of gene function.
 
 ## Approach 1 {.larger}
 
-** Overrepresentation analysis (ORA)**
+**Overrepresentation analysis (ORA)**
 
 1. Find a set of differentially expressed genes (DEGs)
 2. Are _DEGs in a set_ more common than _DEGs not in a set_?
@@ -329,7 +331,9 @@ Gene ontology describes multiple levels of detail of gene function.
 **Problems**
 
 - Results significantly affected by the selected threshold
+
 - Many genes with moderate but meaningful expression changes are discarded
+
 - Wrong assumption that genes are independent
 
 ## Approach 2 {.larger}
@@ -337,8 +341,10 @@ Gene ontology describes multiple levels of detail of gene function.
 **Functional Class Scoring (FCS)**
 
 - **Gene set analysis (GSA)**. Mootha et al., 2003; modified by Subramanian et al., 2005.
-- **Main rationale** – functionally related genes often display a coordinated expression to accomplish their roles in the cells
-- Aims to identify gene sets with "subtle but coordinated"" expression changes that would be missed by DEGs threshold selection
+
+- Main rationale – functionally related genes often display a coordinated expression to accomplish their roles in the cells
+
+- Aims to identify gene sets with "subtle but coordinated"  expression changes that would be missed by DEGs threshold selection
 
 ## Approach 2
 
@@ -357,7 +363,7 @@ Gene ontology describes multiple levels of detail of gene function.
 
 - **CAMERA** (Wu and Smyth 2012)
 - **C**orrelation-**A**djusted **ME**an **RA**nk gene set test
-- estimating the variance inflation factor associated with inter-gene correlation, and incorporating this into parametric or rank-based test procedures
+- Estimating the variance inflation factor associated with inter-gene correlation, and incorporating this into parametric or rank-based test procedures
 
 ## Other approaches {.larger}
 
@@ -371,9 +377,9 @@ Gene ontology describes multiple levels of detail of gene function.
 
 **Impact analysis** - incorporates topology of the pathway.
 
-- gene's fold change 
-- classical enrichment statistics
-- the topology of the signaling pathway
+- Gene's fold change 
+- Classical enrichment statistics
+- The topology of the signaling pathway
 
 <center>
 ![](img/insulin.png)
@@ -409,6 +415,36 @@ Adi Laurentiu Tarca et al., “A Novel Signaling Pathway Impact Analysis,” _Bi
 
 - If probability of making an error in one test is 0.05, probability of making at least one error in ten tests is
 $$1-(1-0.05)^{10}=0.40126$$
+
+## Error rates
+
+False Discovery rate (FDR)
+
+$$E \left[ \frac{False \; Discoveries}{True \; Discoveries}  \right]$$
+
+Family wise error rate (FWER)
+
+$$Pr(Number \; of \; False \; positives \ge 1)$$
+
+Expected number of false positives
+
+$$E[Number \; of \; False \; positives]$$
+
+## Interpretation
+
+Suppose 550 out of 10,000 genes are significant at $\alpha = 0.05$
+
+**P-value < 0.05**
+
+- Expect $0.05*10,000=500$ false positives
+
+**False Discovery Rate < 0.05$
+
+- Expect $0.05*550=27.5$ false positives
+
+**Family Wise Error Rate < 0.05**
+
+- The probability of at least 1 false positive is $\le 0.05$
 
 ## Permutation based methods {.larger}
 
@@ -592,16 +628,24 @@ wordcloud(words = acknowledgements, freq = frequency_of_acknowledgements, min.fr
 
 &nbsp;
 
+<div style="font-weight:bold; font-size: xx-large; text-align:center;">
 Questions?
+</div>
 
 &nbsp;
 
+<div style="text-align: center;">
 This presentation on GitHub: 
 
+<https://github.com/mdozmorov/presentations>
+</div>
+
 &nbsp;
 
+<div style="font-size: small;">
 Mikhail Dozmorov, Ph.D.
 
 Assistant professor, Department of Biostatistics, VCU
 
 mikhail.dozmorov@vcuhealth.org 
+</div>
