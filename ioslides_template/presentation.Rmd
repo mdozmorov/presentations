@@ -1,0 +1,70 @@
+---
+title: ""
+author: "Mikhail Dozmorov"
+date: ""
+output:
+  ioslides_presentation:
+    css:
+    - css/fonts.css
+    - css/custom.css
+    - css/title-slide.css
+    - css/slide-background.css
+    transition: faster
+    widescreen: true
+    includes:
+      before_body: html/title.html
+  beamer_presentation:
+    colortheme: dolphin
+    fig_caption: no
+    fig_height: 6
+    fig_width: 7
+    fonttheme: structurebold
+    theme: AnnArbor
+---
+
+/* Use 'verbatim = TRUE' as chunk option to show chunk code as is */
+```{r setup, include=FALSE}
+require(knitr)
+hook_source_def = knit_hooks$get('source')
+knit_hooks$set(source = function(x, options){
+  if (!is.null(options$verbatim) && options$verbatim){
+    opts = gsub(",\\s*verbatim\\s*=\\s*TRUE\\s*", "", options$params.src)
+    bef = sprintf('\n\n    ```{r %s}\n', opts, "\n")
+    stringr::str_c(bef, paste(knitr:::indent_block(x, "    "), collapse = '\n'), "\n    ```\n")
+  } else {
+     hook_source_def(x, options)
+  }
+})
+
+## Image slide
+
+<center>
+![](img/why_enrichment1.png)
+</center>
+
+
+## Thank you
+
+&nbsp;
+
+<div style="font-weight:bold; font-size: xx-large; text-align:center;">
+Questions?
+</div>
+
+&nbsp;
+
+<div style="text-align: center;">
+This presentation on GitHub: 
+
+<https://github.com/mdozmorov/presentations>
+</div>
+
+&nbsp;
+
+<div style="font-size: small;">
+Mikhail Dozmorov, Ph.D.
+
+Assistant professor, Department of Biostatistics, VCU
+
+mikhail.dozmorov@vcuhealth.org 
+</div>
