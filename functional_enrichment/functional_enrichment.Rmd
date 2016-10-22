@@ -7,8 +7,12 @@ output:
     css:
     - css/fonts.css
     - css/custom.css
+    - css/title-slide.css
+    - css/slide-background.css
     transition: faster
     widescreen: true
+    includes:
+      before_body: html/title.html
   beamer_presentation:
     colortheme: dolphin
     fig_caption: no
@@ -416,7 +420,7 @@ Adi Laurentiu Tarca et al., “A Novel Signaling Pathway Impact Analysis,” _Bi
 - If probability of making an error in one test is 0.05, probability of making at least one error in ten tests is
 $$1-(1-0.05)^{10}=0.40126$$
 
-## Error rates
+## Error rates {.larger}
 
 False Discovery rate (FDR)
 
@@ -430,7 +434,7 @@ Expected number of false positives
 
 $$E[Number \; of \; False \; positives]$$
 
-## Interpretation
+## Interpretation {.larger}
 
 Suppose 550 out of 10,000 genes are significant at $\alpha = 0.05$
 
@@ -438,7 +442,7 @@ Suppose 550 out of 10,000 genes are significant at $\alpha = 0.05$
 
 - Expect $0.05*10,000=500$ false positives
 
-**False Discovery Rate < 0.05$
+**False Discovery Rate < 0.05$**
 
 - Expect $0.05*550=27.5$ false positives
 
