@@ -5,7 +5,7 @@ slides > slide ol,
 slides > slide li {
     text-transform: none;
     font-family: arial, helvetica, sans-serif;
-    font-size: larger;
+/*    font-size: larger; */
     color: black;
 }
 
