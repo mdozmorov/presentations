@@ -22,8 +22,8 @@ output:
     theme: AnnArbor
 ---
 
-/* Use 'verbatim = TRUE' as chunk option to show chunk code as is */
 ```{r setup, include=FALSE}
+# Use 'verbatim = TRUE' as chunk option to show chunk code as is
 require(knitr)
 hook_source_def = knit_hooks$get('source')
 knit_hooks$set(source = function(x, options){
