@@ -6,7 +6,6 @@
 .Rhistory
 *.xlsx
 *.docx
-*.html
 Untitled*
 *_cache
 *_files
