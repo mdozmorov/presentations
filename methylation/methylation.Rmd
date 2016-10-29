@@ -40,23 +40,33 @@ knit_hooks$set(source = function(x, options){
 
 ## DNA methylation 
 
-- DNA methylation is a type of chemical modification of DNA which involves the addition of a methyl group to the number 5 carbon of the cytosine, to convert cytosine to 5-methylcytosine.
+- DNA methylation is a type of chemical modification of DNA which involves the addition of a methyl group to the number 5 carbon of the cytosine (5C), to convert cytosine to 5-methylcytosine (5mC).
 
 - The most well characterized epigenetic mechanism.
 
-- In humans, DNA methylation occurs in cytosines that precede guanines
+- In humans, DNA methylation occurs in cytosines that precede guanines (hence, CpG)
 
 <center>
 ![](img/methylation.png)
 </center>
 
-## CpG Sites and CpG islands
+## DNA modifications  {.smaller}
+
+- Other nucleotides (Adenine, Guanine, Thymine) also modified
+
+<center>
+![](img/DNAmod.png)
+</center>
+
+Sood AJ, Viner C, Hoffman MM. 2016. DNAmod: the DNA modification database. bioRxiv 071712. https://www.pmgenomics.ca/hoffmanlab/proj/dnamod/
+
+## CpG Sites and CpG islands {.larger}
 
 - CpG sites are not randomly distributed in the genome - the frequency of CpG sites in human genomes is 1%, which is less than the expected (~4-6%). 
 
 - Around 60-90% of CpGs are methylated in mammals. DNA methylation frequently occurs in repeated sequences, and may help to suppress junk DNA and prevent chromosomal instability. 
 
-## CpG Sites and CpG islands
+## CpG Sites and CpG islands {.larger}
 
 - There are regions of the DNA that have a higher concentration of CpG sites (> 60%), named the CpG islands, which tend to be located in the promoter regions of many genes.
 
@@ -64,13 +74,13 @@ knit_hooks$set(source = function(x, options){
 
 - Usually not methylated.
 
-## Creation and maintenance of DNA methylation
+## Creation and maintenance of DNA methylation {.larger}
 
 - In humans, DNA is methylated by three enzymes, DNA methyltransferase DNMT1, DNMT3a, DNMT3b.
 
 - DNMT1 is the maintenance methyltransferase that is responsible for copying DNA methylation patterns to the daughter strands during DNA replication. 
 
-- DNMT3a and 3b are the de novo methyltransferases that set up DNA methylation patterns early in development. 
+- DNMT3a and 3b are the _de novo_ methyltransferases that set up DNA methylation patterns early in development. 
 
 ## Roles of DNA methylation
 
@@ -84,7 +94,7 @@ knit_hooks$set(source = function(x, options){
 ![](img/methylation1.png)
 </center>
 
-## Factors associated with DNA Methylation change
+## Factors associated with changes in DNA methylation {.larger}
 
 - Aging (developmental stage)
 - Diet
@@ -205,11 +215,11 @@ Prevention
 
 ## Illumina Infinium evolution
 
-- 2008: HumanMethylation27K. 25,578 probes targeting CpG sites within the proximal promoter regions.
+- 2008: **HumanMethylation27K**. 25,578 probes targeting CpG sites within the proximal promoter regions.
 
-- 2011: HumanMethylation450K. 485,577 probes targeting additional CpG islands, shores and shelves, the 5' and 3' UTRs, gene bodies, some enhancer regions.
+- 2011: **HumanMethylation450K**. 485,577 probes targeting additional CpG islands, shores and shelves, the 5' and 3' UTRs, gene bodies, some enhancer regions.
 
-- 2015: MethylationEPIC. >850,000 probes. Additional cooverage of regulatory elements. 58% of FANTOM5 enhancers, 7% distal and 27% proximal ENCODE regulatory elements.
+- 2015: **MethylationEPIC**. >850,000 probes. Additional cooverage of regulatory elements. 58% of FANTOM5 enhancers, 7% distal and 27% proximal ENCODE regulatory elements.
 
 ***
 <center>
@@ -262,12 +272,6 @@ $M = + \infty$ - all probes are methylated
 <center>
 ![](img/betavals.png)
 </center>
-
-## Analysis of beta-values
-
-- Linear regression and hope for the best
-- Robust regression (Joubert BR et al EHP 2012)
-- Beta-regression (Seow WJ, PLOSone 2012)
 
 ## minfi
 
@@ -366,21 +370,41 @@ plotCpg(mset, cpg=cpgs, pheno=pd$Sample_Group)
 
 - More for MethylationEPIC at https://genomebiology.biomedcentral.com/articles/10.1186/s13059-016-1066-1
 
+## Illumina Infinium array analysis
+
+- **lumi** - normalization, vusualization, gene annotation https://www.bioconductor.org/packages/release/bioc/html/lumi.html
+- **methylumi** - normalization and general data handling	http://www.bioconductor.org/packages/release/bioc/html/methylumi.html	 
+- **minfi**	- normalization, analysis and visualization	http://www.bioconductor.org/packages/release/bioc/html/minfi.html
+- **methyLiftover** - map bisulfite sequencing data to the Illumina 450K methylation CpG set https://github.com/Christensen-Lab-Dartmouth/methyLiftover
+
+&nbsp;
+
+Morris TJ, Beck S "**Analysis pipelines and packages for Infinium HumanMethylation450 BeadChip (450k) data**" Methods. 2015 https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4304832/
+
 ## My pipeline
 
 1. Filtering non-specific, polymorphic, SNP, chromosome Y probes
 2. Pre-processing and QC
-    - dasen (background correction and quantile normalization)
-    - BIMQ (correcting batch effect of Infinium I and II chemistries)
+    - `dasen` (background correction and quantile normalization)
+    - `BIMQ` (correcting batch effect of Infinium I and II chemistries)
     - Principal Components Analysis to detect batch effects
     - ComBat (removing batch effect)
 3. Association analysis, or differential methylation
-    - betareg regression model
+    - `betareg` regression model
     - Pearson correlation coefficient
-    - limma
-    - Benjamini-Hochberg adjusted p-value (age) < 0.05
+    - `limma`
+    - Benjamini-Hochberg adjusted p-values < 0.05
 4. Functional enrichment analyses
 
+## Methylation statistics packages {.smaller}
+
+- **BiSeq** (K. Hebestreit et al.) Beta regression model, impractical for very large data other than RRBS or targeted BS-Seq https://bioconductor.org/packages/release/bioc/html/BiSeq.html
+- **bsseq** (K.D. Hansen) Implements the BSmooth smoothing algorithm. Numerous CpG-wise t-tests and p-value cutoff to define DMRs. Outperforms Fisher’s exact test. Requires biological replicates for DMR detection https://bioconductor.org/packages/release/bioc/html/bsseq.html
+- **DMAP** (P. Stockwell et al.) RRBS fragment or fixed window approach, Fisher’s exact test, Chi-squared or ANOVA RADMeth (C++ command line tool by E. Dolzhenko and A.D. Smith) Beta-binomial regression analysis to find DMCs or DMRs, local likelihood, adjust for neighbouring CpGs http://biochem.otago.ac.nz/research/databases-software
+- **DSS** (Feng et al., 2014) Constructs genome-wide prior distribution for beta-binomial dispersion. Bayesian hierarchical model to detect differentially methylated loci https://www.bioconductor.org/packages/3.3/bioc/html/DSS.html
+- **methylKit** (A. Akalin et al.) Sliding window, Fisher’s exact test or logistic regression. Adjusts p-values to q-values using SLIM method. https://github.com/al2na/methylKit
+- **MOABS** (D. Sun et al.) Beta binomial hierarchical model to capture sampling and biological variation, Credible Methylation Difference (CDIF) single metric that combines biological and statistical significance https://code.google.com/archive/p/moabs/
+- **RnBeads** (F. Mueller et al.) works for 450K arrays, BS-Seq, MeDIP or MBD-Seq data https://bioconductor.org/packages/release/bioc/html/RnBeads.html
 
 ## References
 
