@@ -272,15 +272,15 @@ Gene ontology describes multiple levels of detail of gene function.
 
 ## Other pathway databases {.larger}
 
-- <http://www.pathwaycommons.org/> - version 8 has over 42,000 pathways from 22 data sources
+- **PathwayCommons**, version 8 has over 42,000 pathways from 22 data sources, http://www.pathwaycommons.org/
+- **PathGuide**, lists ~550 pathway related databases, http://www.pathguide.org/
+- **WikiPathways**, community-curated pathways, http://wikipathways.org/
 
-&nbsp;
+## Genes to networks
 
-- <http://www.pathguide.org/> - lists ~550 pathway related databases
-
-&nbsp;
-
-- http://wikipathways.org/ - community-curated pathways
+- **GeneMania**, networks based on different properties, http://genemania.org
+- **STRING**, protein-protein interaction networks, http://string-db.org
+- **Genes2Networks**, protein-protein interaction networks, http://amp.pharm.mssm.edu/X2K/#g2n
 
 ## Overview {.larger}
 
