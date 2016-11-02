@@ -278,6 +278,10 @@ Gene ontology describes multiple levels of detail of gene function.
 
 - <http://www.pathguide.org/> - lists ~550 pathway related databases
 
+&nbsp;
+
+- http://wikipathways.org/ - community-curated pathways
+
 ## Overview {.larger}
 
 - <div style="color: #808080">Why enrichment analysis?</div>
