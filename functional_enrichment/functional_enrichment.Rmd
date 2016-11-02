@@ -310,15 +310,44 @@ Gene ontology describes multiple levels of detail of gene function.
 
 ## Approach 1 {.larger}
 
-**Overrepresentation analysis (ORA)**
+**Overrepresentation analysis, Hypergeometric test** 
 
-1. Find a set of differentially expressed genes (DEGs)
-2. Are _DEGs in a set_ more common than _DEGs not in a set_?
+- $m$ is the total number of genes
+- $j$ is the number of genes are in the functional group
+- $n$ is the number of differentially expressed genes
+- $k$ is the number of differentially expressed genes in the group
 
-|             | In gene set     | Not in gene set    |
-|-------------|:---------------:|:------------------:|
-| DEG         |        k        |            K       |
-| not DEG     |       n-k       |           N-K      |
+<center><img src="img/hypergeometric.png" height="220px" /></center>
+
+## Approach 1 {.larger}
+
+**Overrepresentation analysis, Hypergeometric test** 
+
+- $m$ is the total number of genes
+- $j$ is the number of genes are in the functional group
+- $n$ is the number of differentially expressed genes
+- $k$ is the number of differentially expressed genes in the group
+
+|                    | Diff. exp. genes | Not Diff. exp. genes | Total |
+|--------------------|:----------------:|:--------------------:|:------|
+| In gene set        |        k         |           j-k        | j     |
+| Not in gene set    |       n-k        |         m-n-j+k      | m-j   |
+| Total              |       n          |           m-n        |  m    |
+
+## Approach 1 {.larger}
+
+**Overrepresentation analysis, Hypergeometric test** 
+
+- $m$ is the total number of genes
+- $j$ is the number of genes are in the functional group
+- $n$ is the number of differentially expressed genes
+- $k$ is the number of differentially expressed genes in the group
+
+What is the probability of having $k$ or more genes from the group in the selected $n$ genes?
+
+$$P = \sum_{i=k}^n{ \frac{{m-j \choose n-i}{j \choose i}}{{m \choose n}} }$$
+
+
 
 ## Approach 1 {.larger}
 
@@ -327,7 +356,7 @@ Gene ontology describes multiple levels of detail of gene function.
 1. Find a set of differentially expressed genes (DEGs)
 2. Are _DEGs in a set_ more common than _DEGs not in a set_?
 
-- Fisher hypergeometric test `stats::fisher.test()`
+- Fisher test `stats::fisher.test()`
 - Conditional hypergeometric test, to account for directed hierachy of GO `GOstats::hyperGTest()`
 
 &nbsp;
