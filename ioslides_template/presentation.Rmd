@@ -42,6 +42,7 @@ knit_hooks$set(source = function(x, options){
 ![](img/why_enrichment1.png)
 </center>
 
+<center><img src="img/clustering.png" height="370px" /></center>
 
 ## Thank you
 
