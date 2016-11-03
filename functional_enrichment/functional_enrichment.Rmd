@@ -621,7 +621,7 @@ Enrichment = functional impact
 - <div style="color: #808080">GENOMIC REGIONS enrichment</div>
 - **Tools and references**
 
-## Gene set enrichment analysis | Web  {.larger}
+## Gene set enrichment analysis | Web
 
 - **GSEA** (https://www.broadinstitute.org/gsea/index.jsp) - Better way of doing enrichment analysis
 - **g:Profiler** (http://biit.cs.ut.ee/gprofiler/) - gene ID converter, GO and pathway enrichment, and more
