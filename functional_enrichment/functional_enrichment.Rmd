@@ -626,6 +626,7 @@ Enrichment = functional impact
 - **GSEA** (https://www.broadinstitute.org/gsea/index.jsp) - Better way of doing enrichment analysis
 - **g:Profiler** (http://biit.cs.ut.ee/gprofiler/) - gene ID converter, GO and pathway enrichment, and more
 - **ToppGene** (https://toppgene.cchmc.org) - Quick gene enrichment analysis in multiple categories
+- **Metascape** (http://metascape.org/) - Enrichment analysis of multiple gene sets
 - **DAVID** (https://david.ncifcrf.gov/) - Newly updated gene enrichment analysis
 - **FRY** (http://shiny.bioinf.wehi.edu.au/giner.g/FRY_GeneSetExplorerApp/) - Fast Interactive Biological Pathway Miner, from WEHI group 
 
