@@ -273,6 +273,16 @@ $M = + \infty$ - all probes are methylated
 ![](img/betavals.png)
 </center>
 
+## Filter questionable probes
+
+- A list of potential nonspecific probes and polymorphic probes of Illumina Human 27k Methylation Array, [BrainCloud](http://braincloud.jhmi.edu/downloads.htm), [http://braincloud.jhmi.edu/NonspecificAndPolymorphic.zip](http://braincloud.jhmi.edu/NonspecificAndPolymorphic.zip)
+
+- Data from Chen YA, et.al. "[Discovery of cross-reactive probes and polymorphic CpGs in the Illumina Infinium HumanMethylation450 microarray](http://www.ncbi.nlm.nih.gov/pmc/articles/PMC3592906/)." Epigenetics. 
+    - [List of non-specific probes](http://www.sickkids.ca/MS-Office-Files/Research/Weksberg%20Lab/48639-non-specific-probes-Illumina450k.xlsx) - 29,233 non-specific 'cg' probes, 1,736 non-specific 'ch' probes; 
+    - [List of polymorphic CpGs](http://www.sickkids.ca/MS-Office-Files/Research/Weksberg%20Lab/48640-polymorphic-CpGs-Illumina450k.xlsx) - 70,899 records (66,877 unique probes) about CpGs containing SNPs at or near single base extension (SBE) position, 316,034 records (220,582 unique probes) having SNPs in probe sequences.
+
+- More for MethylationEPIC at https://genomebiology.biomedcentral.com/articles/10.1186/s13059-016-1066-1
+
 ## minfi
 
 - Reads data (Illumina’s 450k array IDAT files) into R
@@ -360,27 +370,6 @@ par(mfrow=c(2,2))
 plotCpg(mset, cpg=cpgs, pheno=pd$Sample_Group)
 ```
 
-## Filter questionable probes
-
-- A list of potential nonspecific probes and polymorphic probes of Illumina Human 27k Methylation Array, [BrainCloud](http://braincloud.jhmi.edu/downloads.htm), [http://braincloud.jhmi.edu/NonspecificAndPolymorphic.zip](http://braincloud.jhmi.edu/NonspecificAndPolymorphic.zip)
-
-- Data from Chen YA, et.al. "[Discovery of cross-reactive probes and polymorphic CpGs in the Illumina Infinium HumanMethylation450 microarray](http://www.ncbi.nlm.nih.gov/pmc/articles/PMC3592906/)." Epigenetics. 
-    - [List of non-specific probes](http://www.sickkids.ca/MS-Office-Files/Research/Weksberg%20Lab/48639-non-specific-probes-Illumina450k.xlsx) - 29,233 non-specific 'cg' probes, 1,736 non-specific 'ch' probes; 
-    - [List of polymorphic CpGs](http://www.sickkids.ca/MS-Office-Files/Research/Weksberg%20Lab/48640-polymorphic-CpGs-Illumina450k.xlsx) - 70,899 records (66,877 unique probes) about CpGs containing SNPs at or near single base extension (SBE) position, 316,034 records (220,582 unique probes) having SNPs in probe sequences.
-
-- More for MethylationEPIC at https://genomebiology.biomedcentral.com/articles/10.1186/s13059-016-1066-1
-
-## Illumina Infinium array analysis
-
-- **lumi** - normalization, vusualization, gene annotation https://www.bioconductor.org/packages/release/bioc/html/lumi.html
-- **methylumi** - normalization and general data handling	http://www.bioconductor.org/packages/release/bioc/html/methylumi.html	 
-- **minfi**	- normalization, analysis and visualization	http://www.bioconductor.org/packages/release/bioc/html/minfi.html
-- **methyLiftover** - map bisulfite sequencing data to the Illumina 450K methylation CpG set https://github.com/Christensen-Lab-Dartmouth/methyLiftover
-
-&nbsp;
-
-Morris TJ, Beck S "**Analysis pipelines and packages for Infinium HumanMethylation450 BeadChip (450k) data**" Methods. 2015 https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4304832/
-
 ## My pipeline
 
 1. Filtering non-specific, polymorphic, SNP, chromosome Y probes
@@ -392,9 +381,26 @@ Morris TJ, Beck S "**Analysis pipelines and packages for Infinium HumanMethylati
 3. Association analysis, or differential methylation
     - `betareg` regression model
     - Pearson correlation coefficient
-    - `limma`
+    - `limma` for differentially methylated tegions
     - Benjamini-Hochberg adjusted p-values < 0.05
 4. Functional enrichment analyses
+
+## Interpretation
+
+- Map CpG sites of interest to the nearby genes, analyze genes for functional enrichment
+- Analyze genomic location of CpG sites, using genomic coordinates
+    - **GREAT** - genomic regions enrichment of annotations tool, http://bejerano.stanford.edu/great/public/html/
+    - **GenomeRunner** - functional interpretation of genomic regions within regulatory context, http://integrativegenomics.org/
+
+## R packages for Illumina Infinium array analysis
+
+- **lumi** - normalization, vusualization, gene annotation https://www.bioconductor.org/packages/release/bioc/html/lumi.html
+- **methylumi** - normalization and general data handling	http://www.bioconductor.org/packages/release/bioc/html/methylumi.html	 
+- **minfi**	- normalization, analysis and visualization	http://www.bioconductor.org/packages/release/bioc/html/minfi.html
+
+&nbsp;
+
+Morris TJ, Beck S "**Analysis pipelines and packages for Infinium HumanMethylation450 BeadChip (450k) data**" Methods. 2015 https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4304832/
 
 ## Methylation statistics packages {.smaller}
 
@@ -405,6 +411,7 @@ Morris TJ, Beck S "**Analysis pipelines and packages for Infinium HumanMethylati
 - **methylKit** (A. Akalin et al.) Sliding window, Fisher’s exact test or logistic regression. Adjusts p-values to q-values using SLIM method. https://github.com/al2na/methylKit
 - **MOABS** (D. Sun et al.) Beta binomial hierarchical model to capture sampling and biological variation, Credible Methylation Difference (CDIF) single metric that combines biological and statistical significance https://code.google.com/archive/p/moabs/
 - **RnBeads** (F. Mueller et al.) works for 450K arrays, BS-Seq, MeDIP or MBD-Seq data https://bioconductor.org/packages/release/bioc/html/RnBeads.html
+- **methyLiftover** - map bisulfite sequencing data to the Illumina 450K methylation CpG set https://github.com/Christensen-Lab-Dartmouth/methyLiftover
 
 ## References
 
