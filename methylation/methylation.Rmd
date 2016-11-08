@@ -58,13 +58,15 @@ knit_hooks$set(source = function(x, options){
 ![](img/DNAmod.png)
 </center>
 
-Sood AJ, Viner C, Hoffman MM. 2016. DNAmod: the DNA modification database. bioRxiv 071712. https://www.pmgenomics.ca/hoffmanlab/proj/dnamod/
+Sood AJ, Viner C, Hoffman MM. 2016. "**DNAmod: the DNA modification database.**" bioRxiv 071712. https://www.pmgenomics.ca/hoffmanlab/proj/dnamod/
 
 ## CpG Sites and CpG islands {.larger}
 
 - CpG sites are not randomly distributed in the genome - the frequency of CpG sites in human genomes is 1%, which is less than the expected (~4-6%). 
 
-- Around 60-90% of CpGs are methylated in mammals. DNA methylation frequently occurs in repeated sequences, and may help to suppress junk DNA and prevent chromosomal instability. 
+- Around 60-90% of CpGs are methylated in mammals. 
+
+- DNA methylation frequently occurs in repeated sequences, and may help to suppress junk DNA and prevent chromosomal instability. 
 
 ## CpG Sites and CpG islands {.larger}
 
@@ -108,7 +110,7 @@ Sood AJ, Viner C, Hoffman MM. 2016. DNAmod: the DNA modification database. bioRx
 **Hypomethylation** – decrease methylation levels
 
 - A lower level of DNA methylation in tumors was one of the first epigenetic alterations to be found in human cancer. (Feinberg AP, et al., 1983). 
-- Promoter region CpG islands demethylation of proto-oncogenes will activate the repressed gene expression
+- Demethylation of the promoter region of proto-oncogenes will activate normally repressed gene expression
 - Global hypomethylation of DNA sequences that are normally heavily methylated may result in:
     - Chromosomal instability 
     - Increased transcription from transposable elements 
@@ -119,7 +121,7 @@ Sood AJ, Viner C, Hoffman MM. 2016. DNAmod: the DNA modification database. bioRx
 **Hypermethylation** – increase methylation levels
 
 - Hypermethylation of the CpG islands in the promoter regions of tumor-suppressor genes is a major event in the origin of many cancers.
-- Hypermethylation of the CpG island promoter can inactivate tumor-suppressor genes, affect genes involved in the cell cycle, DNA repair, and the metabolism of carcinogens, all of which are involved in the development of cancer. 
+- Hypermethylation of promoters can inactivate tumor-suppressor genes, affect genes involved in the cell cycle, DNA repair, and the metabolism of carcinogens, all of which are involved in the development of cancer. 
 - The profiles of hypermethylation of the CpG islands in tumor-suppressor genes are specific to the cancer type.
 
 ***
@@ -127,9 +129,7 @@ Sood AJ, Viner C, Hoffman MM. 2016. DNAmod: the DNA modification database. bioRx
 ![](img/laird.png)
 </center>
 
-<div style="font-size:50%;">
-Laird PW "Oncogenic mechanisms mediated by DNA methylation." Mol Med Today. 1997 http://www.cell.com/moltod/pdf/S1357-4310(97)01019-8.pdf
-</div>
+Laird PW "**Oncogenic mechanisms mediated by DNA methylation.**  " Mol Med Today. 1997 http://www.cell.com/moltod/pdf/S1357-4310(97)01019-8.pdf
 
 ## Methylation assays
 
@@ -217,7 +217,7 @@ Prevention
 
 - 2008: **HumanMethylation27K**. 25,578 probes targeting CpG sites within the proximal promoter regions.
 
-- 2011: **HumanMethylation450K**. 485,577 probes targeting additional CpG islands, shores and shelves, the 5' and 3' UTRs, gene bodies, some enhancer regions.
+- 2011: **HumanMethylation450K**. 485,577 probes targeting additional CpG islands, shores and shelves, the 5' and 3' UTRs, gene bodies, some enhancer regions. Covers 99% of RefSeq genes.
 
 - 2015: **MethylationEPIC**. >850,000 probes. Additional cooverage of regulatory elements. 58% of FANTOM5 enhancers, 7% distal and 27% proximal ENCODE regulatory elements.
 
@@ -230,9 +230,9 @@ Prevention
 
 Two types of probes
 
-- **Type I probes** have two separate probe sequences per CpG site (one each for methylated and unmethylated CpGs)
+- **Type I probes** have two separate probe sequences per CpG site (one each for methylated and unmethylated CpGs). ~28% of probes. Suggested to be more stable and reproducible than the Type II probes
 
-- **Type II probes** have just one probe sequence per CpG site. Use half of the physical space
+- **Type II probes** have just one probe sequence per CpG site. Use half of the physical space. ~ 72% of probes. Have a decreased quantitative dynamic range compared to Type I probes.
 
 ## Measurement of methylation level
 
@@ -275,6 +275,25 @@ $M = + \infty$ - all probes are methylated
 
 ## Filter questionable probes
 
+- Remove probes that have failed to hybridize (detection p-value)
+    - detection p-value represents the probability the target signal was distinguishable against background noise
+
+- Common approaches
+    - Drop probes that failed in $n^{th}%$ of samples
+        - Common thresholds are 20%, 10%, 5% of probes at >0.05, >0.01
+
+    - Drop samples that failed in $n^{th}%$ of probes
+        - Common thresholds are 50%, 20% at >0.05, >0.01
+
+## Filter questionable probes
+
+- Probes on X and Y chromosomes
+- Probes with lowest variation
+- Probes with extreme methylation level (e.g. median = 0% or 100%)
+- Keep only those in regions of interest (e.g. CpG islands, shores)
+
+## Filter questionable probes
+
 - A list of potential nonspecific probes and polymorphic probes of Illumina Human 27k Methylation Array, [BrainCloud](http://braincloud.jhmi.edu/downloads.htm), [http://braincloud.jhmi.edu/NonspecificAndPolymorphic.zip](http://braincloud.jhmi.edu/NonspecificAndPolymorphic.zip)
 
 - Data from Chen YA, et.al. "[Discovery of cross-reactive probes and polymorphic CpGs in the Illumina Infinium HumanMethylation450 microarray](http://www.ncbi.nlm.nih.gov/pmc/articles/PMC3592906/)." Epigenetics. 
@@ -285,7 +304,7 @@ $M = + \infty$ - all probes are methylated
 
 ## minfi
 
-- Reads data (Illumina’s 450k array IDAT files) into R
+- Reads Illumina’s 450k array raw data (IDAT files) into R
 - Performs QC and normalization
 - Identifies differential methylation positions (DMP)
 
@@ -331,6 +350,11 @@ MSet.norm <- preprocessIllumina(RGset, bg.correct = TRUE, normalize = "controls"
 
 Different methods for normalization have been proposed and still being developed
 
+- dye-bias adjustment
+- Probe type I and II adjustment
+
+Yousefi P. et. al. "**Considerations for normalization of DNA methylation data by Illumina 450K BeadChip assay in population studies**" Epigenetics 2013 http://www.tandfonline.com/doi/abs/10.4161/epi.26037
+
 ## Multi-dimensional scaling (MDS) plot  {.smaller}
 
 ```{r cache=TRUE, fig.height=4}
@@ -375,13 +399,13 @@ plotCpg(mset, cpg=cpgs, pheno=pd$Sample_Group)
 1. Filtering non-specific, polymorphic, SNP, chromosome Y probes
 2. Pre-processing and QC
     - `dasen` (background correction and quantile normalization)
-    - `BIMQ` (correcting batch effect of Infinium I and II chemistries)
+    - `BIMQ` (Beta-mixture quantile normalization, correcting batch effect of Infinium I and II chemistries)
     - Principal Components Analysis to detect batch effects
-    - ComBat (removing batch effect)
+    - `ComBat`, `ISVA` (removing batch effect)
 3. Association analysis, or differential methylation
     - `betareg` regression model
     - Pearson correlation coefficient
-    - `limma` for differentially methylated tegions
+    - `limma`, `minfi` for differentially methylated tegions
     - Benjamini-Hochberg adjusted p-values < 0.05
 4. Functional enrichment analyses
 
@@ -396,9 +420,15 @@ plotCpg(mset, cpg=cpgs, pheno=pd$Sample_Group)
 
 - **lumi** - normalization, vusualization, gene annotation https://www.bioconductor.org/packages/release/bioc/html/lumi.html
 - **methylumi** - normalization and general data handling	http://www.bioconductor.org/packages/release/bioc/html/methylumi.html	 
-- **minfi**	- normalization, analysis and visualization	http://www.bioconductor.org/packages/release/bioc/html/minfi.html
+- **minfi**	- normalization, analysis and visualization	http://www.bioconductor.org/packages/release/bioc/html/minfi.html, or **ChAMP** - eight functions to run _minfi_ pipelines, https://bioconductor.org/packages/release/bioc/html/ChAMP.html
+- **RnBeads** - works for 450K arrays, BS-Seq, MeDIP or MBD-Seq data https://bioconductor.org/packages/release/bioc/html/RnBeads.html
+- **wateRmelon** - 15 normalization methods, other QC metrics https://bioconductor.org/packages/release/bioc/html/wateRmelon.html
 
-&nbsp;
+Morris TJ, Beck S "**Analysis pipelines and packages for Infinium HumanMethylation450 BeadChip (450k) data**" Methods. 2015 https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4304832/
+
+## R packages for Illumina Infinium array analysis
+
+<center><img src="img/beck.png" height="450px" /></center>
 
 Morris TJ, Beck S "**Analysis pipelines and packages for Infinium HumanMethylation450 BeadChip (450k) data**" Methods. 2015 https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4304832/
 
@@ -410,7 +440,6 @@ Morris TJ, Beck S "**Analysis pipelines and packages for Infinium HumanMethylati
 - **DSS** (Feng et al., 2014) Constructs genome-wide prior distribution for beta-binomial dispersion. Bayesian hierarchical model to detect differentially methylated loci https://www.bioconductor.org/packages/3.3/bioc/html/DSS.html
 - **methylKit** (A. Akalin et al.) Sliding window, Fisher’s exact test or logistic regression. Adjusts p-values to q-values using SLIM method. https://github.com/al2na/methylKit
 - **MOABS** (D. Sun et al.) Beta binomial hierarchical model to capture sampling and biological variation, Credible Methylation Difference (CDIF) single metric that combines biological and statistical significance https://code.google.com/archive/p/moabs/
-- **RnBeads** (F. Mueller et al.) works for 450K arrays, BS-Seq, MeDIP or MBD-Seq data https://bioconductor.org/packages/release/bioc/html/RnBeads.html
 - **methyLiftover** - map bisulfite sequencing data to the Illumina 450K methylation CpG set https://github.com/Christensen-Lab-Dartmouth/methyLiftover
 
 ## References
