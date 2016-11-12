@@ -66,7 +66,7 @@ Sood AJ, Viner C, Hoffman MM. 2016. "**DNAmod: the DNA modification database.**"
 
 - Around 60-90% of CpGs are methylated in mammals. 
 
-- DNA methylation frequently occurs in repeated sequences, and may help to suppress junk DNA and prevent chromosomal instability. 
+- DNA methylation frequently occurs in repeated sequences, and may help to suppress transcription from repeated sequences, and aid chromosomal stability. 
 
 ## CpG Sites and CpG islands {.larger}
 
@@ -105,7 +105,7 @@ Sood AJ, Viner C, Hoffman MM. 2016. "**DNAmod: the DNA modification database.**"
 - Smoking
 - Alcohol
 
-## DNA methylation and cancer
+## DNA methylation and cancer {.larger}
 
 **Hypomethylation** – decrease methylation levels
 
@@ -116,7 +116,7 @@ Sood AJ, Viner C, Hoffman MM. 2016. "**DNAmod: the DNA modification database.**"
     - Increased transcription from transposable elements 
     - An elevated mutation rate due to mitotic recombination
 
-## DNA hypermethylation
+## DNA hypermethylation {.larger}
 
 **Hypermethylation** – increase methylation levels
 
@@ -131,7 +131,7 @@ Sood AJ, Viner C, Hoffman MM. 2016. "**DNAmod: the DNA modification database.**"
 
 Laird PW "**Oncogenic mechanisms mediated by DNA methylation.**  " Mol Med Today. 1997 http://www.cell.com/moltod/pdf/S1357-4310(97)01019-8.pdf
 
-## Methylation assays
+## Methylation assays {.larger}
 
 **Sensitivity of restriction enzymes for methylated CpG sites**
 
@@ -154,7 +154,7 @@ Laird PW "**Oncogenic mechanisms mediated by DNA methylation.**  " Mol Med Today
 ![](img/bisulfite.png)
 </center>
 
-## (m)RRBS: (multiplexed) Reduced Representation  Bisulfite Sequencing
+## (m)RRBS: (multiplexed) Reduced Representation Bisulfite Sequencing {.larger}
 
 
 - Utilizes cutting pattern of MspI enzyme (C^CGG) to systematically digest CpG-poor DNA
@@ -167,20 +167,20 @@ Laird PW "**Oncogenic mechanisms mediated by DNA methylation.**  " Mol Med Today
 
 ## Application of DNA methylation assays
 
-Early diagnosis
+**Early diagnosis**
 
 - Detection of CpG-island hypermethylation in biological fluids and serum
 
-Prognosis
+**Prognosis**
 
 - Hypemethylation of specific genes
 - Whole DNA methylation profiles
 
-Prediction
+**Prediction**
 
 - CpG island hypermethylation as a marker of response to chemotherapy
 
-Prevention
+**Prevention**
 
 - Developing DNMTs inhibitors as chemopreventive drugs to reactive silenced genes 
 
@@ -194,7 +194,7 @@ Prevention
 ![](img/RNA_wash.png)
 </center>
 
-## Illumina Infinium methylation assay
+## Illumina Infinium methylation assay {.larger}
 
 - Unmethylated **cytosines** are chemically deaminated to **uracil** in the presence of bisulfite.
 
@@ -204,7 +204,7 @@ Prevention
 
 - The bisulfite-converted WGA-DNA samples is purified and applied to the BeadChips.
 
-## Illumina Infinium methylation assay
+## Illumina Infinium methylation assay {.larger}
 
 - Bead technology
 - Each bead has oligos containing 23-base address + 50-base probe complementary to bisulfite converted DNA
@@ -213,7 +213,7 @@ Prevention
 ![](img/bead_array.png)
 </center>
 
-## Illumina Infinium evolution
+## Illumina Infinium evolution {.larger}
 
 - 2008: **HumanMethylation27K**. 25,578 probes targeting CpG sites within the proximal promoter regions.
 
@@ -226,7 +226,7 @@ Prevention
 ![](img/Illumina450K.png)
 </center>
 
-## Measurement of methylation level
+## Measurement of methylation level {.larger}
 
 Two types of probes
 
@@ -234,7 +234,7 @@ Two types of probes
 
 - **Type II probes** have just one probe sequence per CpG site. Use half of the physical space. ~ 72% of probes. Have a decreased quantitative dynamic range compared to Type I probes.
 
-## Measurement of methylation level
+## Measurement of methylation level {.larger}
 
 **Beta-value**
 
@@ -247,7 +247,7 @@ $\beta = 0$ - all probes are non-methylated
 
 $\beta = 1$ - all probes are methylated
 
-## Measurement of methylation level
+## Measurement of methylation level {.larger}
 
 **Beta-value**
 
@@ -273,7 +273,7 @@ $M = + \infty$ - all probes are methylated
 ![](img/betavals.png)
 </center>
 
-## Filter questionable probes
+## Filter questionable probes {.larger}
 
 - Remove probes that have failed to hybridize (detection p-value)
     - detection p-value represents the probability the target signal was distinguishable against background noise
@@ -285,7 +285,7 @@ $M = + \infty$ - all probes are methylated
     - Drop samples that failed in $n^{th}%$ of probes
         - Common thresholds are 50%, 20% at >0.05, >0.01
 
-## Filter questionable probes
+## Filter questionable probes {.larger}
 
 - Probes on X and Y chromosomes
 - Probes with lowest variation
@@ -350,8 +350,10 @@ MSet.norm <- preprocessIllumina(RGset, bg.correct = TRUE, normalize = "controls"
 
 Different methods for normalization have been proposed and still being developed
 
-- dye-bias adjustment
+- Dye-bias adjustment
 - Probe type I and II adjustment
+
+&nbsp;
 
 Yousefi P. et. al. "**Considerations for normalization of DNA methylation data by Illumina 450K BeadChip assay in population studies**" Epigenetics 2013 http://www.tandfonline.com/doi/abs/10.4161/epi.26037
 
@@ -413,8 +415,9 @@ plotCpg(mset, cpg=cpgs, pheno=pd$Sample_Group)
 
 - Map CpG sites of interest to the nearby genes, analyze genes for functional enrichment
 - Analyze genomic location of CpG sites, using genomic coordinates
-    - **GREAT** - genomic regions enrichment of annotations tool, http://bejerano.stanford.edu/great/public/html/
-    - **GenomeRunner** - functional interpretation of genomic regions within regulatory context, http://integrativegenomics.org/
+    - **GREAT** predicts functions of cis-regulatory regions, http://bejerano.stanford.edu/great/public/html/
+    - **Enrichr**, gene- and genomic regions enrichment analysis tool, http://amp.pharm.mssm.edu/Enrichr/#
+    - **GenomeRunner**, Functional interpretation of SNPs (any genomic regions) within regulatory/epigenomic context, http://integrativegenomics.org/
 
 ## R packages for Illumina Infinium array analysis
 
@@ -444,9 +447,9 @@ Morris TJ, Beck S "**Analysis pipelines and packages for Infinium HumanMethylati
 
 ## References
 
-- Pidsley, Ruth, Elena Zotenko, Timothy J. Peters, Mitchell G. Lawrence, Gail P. Risbridger, Peter Molloy, Susan Van Djik, Beverly Muhlhausler, Clare Stirzaker, and Susan J. Clark. “**Critical Evaluation of the Illumina MethylationEPIC BeadChip Microarray for Whole-Genome DNA Methylation Profiling.**” Genome Biology 17, no. 1 (October 7, 2016): 208. doi:10.1186/s13059-016-1066-1. https://genomebiology.biomedcentral.com/articles/10.1186/s13059-016-1066-1
+- Pidsley, R., et. al., and Susan J. Clark. "**Critical Evaluation of the Illumina MethylationEPIC BeadChip Microarray for Whole-Genome DNA Methylation Profiling.**"" Genome Biology 2016 https://genomebiology.biomedcentral.com/articles/10.1186/s13059-016-1066-1
 
-- Pan Du, Xiao Zhang, Chiang-Ching  et al. "**Comparison of Beta-value and M-value methods for quantifying methylation levels by microarray analysis.**" BMC Bioinformatics, 11:587, 2010.
+- Pan D., et. al. "**Comparison of Beta-value and M-value methods for quantifying methylation levels by microarray analysis.**" BMC Bioinformatics, 2010 https://bmcbioinformatics.biomedcentral.com/articles/10.1186/1471-2105-11-587
 
 - Methylation statistics packages: Table 2 in Liu, Hongbo, Song Li, Xinyu Wang, Jiang Zhu, Yanjun Wei, Yihan Wang, Yanhua Wen, et al. “**DNA Methylation Dynamics: Identification and Functional Annotation.**” Briefings in Functional Genomics, 2016. https://www.ncbi.nlm.nih.gov/pubmed/27515490
 
