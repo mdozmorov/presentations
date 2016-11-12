@@ -1,6 +1,0 @@
-Reproducible research in data science - a bioinformatics primer
-Mikhail Dozmorov
-
-Reproducibility is the foundation of cumulative scientific progress. Failure to reproduce published research affects medical care, delays scientific progress, wastes limited research funding. In the era of data-driven research our ability to reproducibly analyze massive amounts of data became a cornerstone of biomedical sciences.
-
-This seminar will outline the scope of reproducible research, and give an overview of best practices for reproducible scientific computing. Several computational tools and approaches to enhance reproducibility will be presented. Following these practices will improve our confidence in computational data science, and will ultimately speed up progress in biomedical research.
