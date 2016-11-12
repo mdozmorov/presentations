@@ -1,11 +1,12 @@
 # Materials and links related to reproducible research topic
 
-- `reproducible_research_01-29-2016_abstract.txt` - an announcement of the reproducible research seminar
-- `reproducible_research_01-29-2016.pdf` - slides from reproducible research seminar in the Biostatistics department
-- `reproducible_research_04-27-2016.pdf` - slides from reproducible research seminar in the Massey Cancer Center
-- `reproducible_research_2016-09-09` - source code for reproducible research seminar in the Computer Science Department, VCU. See it in action [rpubs.com/mdozmorov/rr](rpubs.com/mdozmorov/rr)
+- `rr_01-29-2016.*` - reproducible research seminar in the Biostatistics department, slides and abstract
+- `rr_04-27-2016.*` - reproducible research seminar in the Massey Cancer Center, slides only
+- `rr_2016-09-09.*` - reproducible research seminar in the Computer Science Department, VCU. Slides, abstract, and source code. See it in action [rpubs.com/mdozmorov/rr](rpubs.com/mdozmorov/rr)
 
-# Videos
+# References
+
+## Videos
 
 - "Reproducible Research: The Time is Now" - webinar by Keith Baggerly, ENAR, November 20, 2015. [http://www3.mdanderson.org/streams/FullVideoPlayer.cfm?mediaID=8979D134-6B1A-4334-A2FF-3A74ABE22C5A](http://www3.mdanderson.org/streams/FullVideoPlayer.cfm?mediaID=8979D134-6B1A-4334-A2FF-3A74ABE22C5A)
 
@@ -20,7 +21,7 @@
 - INSERM Reproducibility in Computational and Experimental Mathematics [https://icerm.brown.edu/tw12-5-rcem/](https://icerm.brown.edu/tw12-5-rcem/) - Workshop, [https://icerm.brown.edu/tw12-5-rcem/](https://icerm.brown.edu/tw12-5-rcem/) - Slides, [https://icerm.brown.edu/video_archive/#/search](https://icerm.brown.edu/video_archive/#/search) - Video
 
 
-# Courses
+## Courses
 
 - Tools for reproducible research by Karl Broman [http://kbroman.org/Tools4RR/](http://kbroman.org/Tools4RR/), [http://kbroman.org/Tools4RR/pages/resources.html](http://kbroman.org/Tools4RR/pages/resources.html) - Resources and links, [https://github.com/kbroman/Tools4RR/tree/master](https://github.com/kbroman/Tools4RR/tree/master) - Git repository
 
@@ -33,7 +34,7 @@
 - Reproducibility in Science guide [https://ropensci.github.io/reproducibility-guide/](https://ropensci.github.io/reproducibility-guide/), and references and further reading collection from [ROpenScience](http://ropensci.org/), [https://ropensci.github.io/reproducibility-guide/sections/references/](https://ropensci.github.io/reproducibility-guide/sections/references/)
 
 
-# Guidelines
+## Guidelines
 
 - NIH own "Principles and Guidelines for Reporting Preclinical Research" [https://www.nih.gov/research-training/rigor-reproducibility/principles-guidelines-reporting-preclinical-research](https://www.nih.gov/research-training/rigor-reproducibility/principles-guidelines-reporting-preclinical-research), and a one-pager "Guide to Rigor and Reproducibility", blog post [https://nexus.od.nih.gov/all/2016/07/31/your-one-page-guide-to-rigor-and-reproducibility/](https://nexus.od.nih.gov/all/2016/07/31/your-one-page-guide-to-rigor-and-reproducibility/), and PDF [https://grants.nih.gov/grants/RigorandReproducibilityChart508.pdf](https://grants.nih.gov/grants/RigorandReproducibilityChart508.pdf)
 
@@ -48,7 +49,7 @@
 - TRIPOD guidelines, for clinical predictive models, diagnostic and prognostic. Encompasses multivariate models with binary/continuous output. [https://www.tripod-statement.org/](https://www.tripod-statement.org/) - Transparent Reporting of a multivariable prediction model for Individual Prognosis Or Diagnosis.
 
 
-# Misc
+## Misc
 
 - ORI (Office of Research Integrity) page with misconduct case summaries [http://ori.hhs.gov/case_summary](http://ori.hhs.gov/case_summary). Wikipedia on Scientific Misconduct [https://en.wikipedia.org/wiki/Scientific_misconduct](https://en.wikipedia.org/wiki/Scientific_misconduct).
 
