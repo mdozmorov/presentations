@@ -1,6 +1,0 @@
-Reproducible research in data science
-Mikhail Dozmorov
-
-Reproducibility is the foundation of scientific progress. Failure to reproduce published research affects medical care, delays scientific development, wastes limited research funding. In the era of data-driven research our ability to reproducibly analyze massive amounts of data became a cornerstone of data science.
-
-This seminar will outline the scope of reproducible research, examples and cost of reproducibility, and give an overview of initiatives and best practices for reproducible data analysis. Several computational tools and approaches to enhance reproducibility will be presented. Following these practices will improve our confidence in the results of computational data analysis, and speed up scientific progress.

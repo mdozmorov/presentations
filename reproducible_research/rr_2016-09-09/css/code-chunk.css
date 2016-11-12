@@ -1,0 +1,15 @@
+.prettyprint,
+pre {
+    max-width: 100%;
+    left: 0;
+    display: block;
+    padding: 9.5px;
+    font-size: 13px;
+    line-height: 1.42857;
+    word-break: break-all;
+    word-wrap: break-word;
+    color: #333333;
+    background-color: #FFFFFF;
+    border: 1px solid #CCCCCC;
+    border-radius: 4px;
+}
