@@ -49,6 +49,12 @@
 - TRIPOD guidelines, for clinical predictive models, diagnostic and prognostic. Encompasses multivariate models with binary/continuous output. [https://www.tripod-statement.org/](https://www.tripod-statement.org/) - Transparent Reporting of a multivariable prediction model for Individual Prognosis Or Diagnosis.
 
 
+## Statistics 
+
+- Statistics for biologists, Nature Methods. Two-page _Points of Significance_, [http://www.nature.com/collections/qghhqm](http://www.nature.com/collections/qghhqm)
+
+- Statistics Notes in the British Medical Journal, by Doug Altman and Martin Bland, [https://www-users.york.ac.uk/~mb55/pubs/pbstnote.htm](https://www-users.york.ac.uk/~mb55/pubs/pbstnote.htm)
+
 ## Misc
 
 - ORI (Office of Research Integrity) page with misconduct case summaries [http://ori.hhs.gov/case_summary](http://ori.hhs.gov/case_summary). Wikipedia on Scientific Misconduct [https://en.wikipedia.org/wiki/Scientific_misconduct](https://en.wikipedia.org/wiki/Scientific_misconduct).
