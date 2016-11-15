@@ -1,7 +1,7 @@
 # Materials and links related to reproducible research topic
 
-- `rr_01-29-2016.*` - reproducible research seminar in the Biostatistics department, slides and abstract
-- `rr_04-27-2016.*` - reproducible research seminar in the Massey Cancer Center, slides only
+- `rr_2016-01-29.*` - reproducible research seminar in the Biostatistics department, slides and abstract
+- `rr_2016-04-27.*` - reproducible research seminar in the Massey Cancer Center, slides only
 - `rr_2016-09-09.*` - reproducible research seminar in the Computer Science Department, VCU. Slides, abstract, and source code. See it in action [rpubs.com/mdozmorov/rr](rpubs.com/mdozmorov/rr)
 
 # References
