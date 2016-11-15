@@ -92,7 +92,9 @@ Two pages from Galilei's Sidereus Nuncius (“The Starry Messenger” or “The 
 ## More data = more chance for errors  {.larger}
 
 - High-throughput biology generates volumes of data
+
 - Data-generating technologies are increasingly used to make clinical recommendations and treatment decisions
+
 - A problem may be overlooked .. Published .. Get in clinical trials
 
 ## More data = more chance for errors 
@@ -225,18 +227,15 @@ http://www.nature.com/nature/journal/v502/n7471/full/nature12564.html
 
 ## Why reproducibility of research issues arise?  {.larger}
 
-- Publish or perish
-
 <center>
-![](img/publish.png)
+<img src="img/funding.png" height="370px" />
 </center>
 
 &nbsp;
 
 <div style="font-size: 60%;">
-- Glenn Begley et. al. "Robust research: Institutions must do their part for reproducibility" Nature 2015
-
-http://www.nature.com/news/robust-research-institutions-must-do-their-part-for-reproducibility-1.18259 
+- Glenn Begley et. al. "**Robust research: Institutions must do their part for reproducibility**" Nature 2015 http://www.nature.com/news/robust-research-institutions-must-do-their-part-for-reproducibility-1.18259 
+- Kendall Powell "**Hard work, little reward: Nature readers reveal working hours and research challenges**" Nature 2016 http://www.nature.com/news/hard-work-little-reward-nature-readers-reveal-working-hours-and-research-challenges-1.20933
 </div>
 
 ## PubMed stats | Reproducible Research
@@ -1095,22 +1094,26 @@ frequency_of_acknowledgements <- rep(1, length(acknowledgements))
 wordcloud(words = acknowledgements, freq = frequency_of_acknowledgements, min.freq = 1, scale=c(2.3, 3), rot.per = 0)
 ```
 
-***
+## Thank you {.larger}
+
+&nbsp;
+
+&nbsp;
 
 <center>
-<img src="img/thank-you.JPG" height="170px" />
+Questions?
 </center>
 
-<center>
-<img src="img/Question.jpg" height="170px" />
-</center>
+&nbsp;
 
 &nbsp;
 
 <div style="text-align: center; font-size: small">
 This presentation on GitHub: 
 
-<https://github.com/mdozmorov/presentations>
+https://github.com/mdozmorov/presentations
+
+&nbsp;
 
 &nbsp;
 
