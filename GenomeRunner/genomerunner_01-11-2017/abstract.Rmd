@@ -1,0 +1,12 @@
+---
+title: "Effective use of epigenomic data to better understand complex diseases"
+author: "Mikhail Dozmorov"
+date: "01/11/2017"
+output: word_document
+---
+
+The amount of genome annotation (epigenomic) data from the ENCODE, Roadmap Epigenomics, and other large-scale studies grows exponentially. These genome annotation datasets may be used as a reference to understand biological meaning of new experimental genomic data. Yet, the use of these epigenomic datasets is slowed by their large size, different data formats, and relatively few statistical methods to analyze them.
+ 
+GenomeRunner web server (http://www.integrativegenomics.org/) was developed to make epigenomic data available for statistical analysis of genomic data. Four types of enrichment-based analyses are introduced: 1) epigenomic enrichment, 2) epigenomic similarity, 3) differential eipgenomic analysis, 4) cell type-specific epigenomic analysis. Validated against literature- and disease ontology-based approaches, analysis of 39 disease/trait-associated SNP sets showed disease-specific epigenomic enrichments corresponding to known disease relationships. A group of autoimmune diseases showed distinct enrichment in the enhancers of T helper cell subpopulations. Other disease-specific SNP sets showed relevant cell type-specificity of epigenomic enrichments. Epigenomic analysis of SNPs from 431 patients diagnosed with Systemic Lupus Erythematosus was able to identify five clinically and epigenomically distinct groups.
+
+Systematic statistical analysis of epigenomic data helps to better understand genomic-epigenomic associations. Future work includes expanding the systematic framework of GenomeRunner with the additional epigenomic data, such as 3D genomic interaction data, and development of new statistical methods, such as spatial enrichment analysis.

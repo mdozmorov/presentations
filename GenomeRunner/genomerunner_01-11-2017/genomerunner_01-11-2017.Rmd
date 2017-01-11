@@ -1,0 +1,536 @@
+---
+title: "Effective use of genome annotation data to better understand complex diseases"
+author: "Mikhail Dozmorov"
+date: "Fall 2016"
+output:
+  ioslides_presentation:
+    css:
+    - css/fonts.css
+    - css/custom.css
+    - css/title-slide.css
+    - css/slide-background.css
+    transition: faster
+    widescreen: true
+    includes:
+      before_body: html/title.html
+  beamer_presentation:
+    colortheme: dolphin
+    fig_caption: no
+    fig_height: 6
+    fig_width: 7
+    fonttheme: structurebold
+    theme: AnnArbor
+---
+
+```{r setup, include=FALSE}
+# Use 'verbatim = TRUE' as chunk option to show chunk code as is
+require(knitr)
+hook_source_def = knit_hooks$get('source')
+knit_hooks$set(source = function(x, options){
+  if (!is.null(options$verbatim) && options$verbatim){
+    opts = gsub(",\\s*verbatim\\s*=\\s*TRUE\\s*", "", options$params.src)
+    bef = sprintf('\n\n    ```{r %s}\n', opts, "\n")
+    stringr::str_c(bef, paste(knitr:::indent_block(x, "    "), collapse = '\n'), "\n    ```\n")
+  } else {
+     hook_source_def(x, options)
+  }
+})
+```
+
+## Statistical genomics {.larger}
+
+&nbsp;
+
+<center>
+**The development and application of statistical methodologies to help analyze and interpret data from 'omics' technologies**
+</center>
+
+## The human genome in a nutshell {.larger}
+
+- Human genome is big - ~3.2 billion base pairs (~6ft long)
+- 20,000-25,000 genes (~2% of the genome)
+
+<center><img src="img/genome_structure.png" height="370px" /></center>
+
+<div style="font-size: small;">http://www.bio.miami.edu/dana/250/250SS14_17print.html</div>
+
+## Genome is more than a sequence {.larger}
+
+- Human genome contains ~4M single nucleotide polymorphisms (SNPs)
+
+- No new SNPs - discovery of new SNPs appears to be saturated at ~8,500 deep sequenced genomes (Telenti A. et.al. "**Deep sequencing of 10,000 human genomes**" PNAS 2016 http://www.pnas.org/content/113/42/11901)
+
+## Genome is more than genes
+
+- SNPs – single nucleotide polymorphisms – and other genomic variants (CNVs, InDels, SVs) are located everywhere
+
+- Only 12% of SNPs are located in, or occur in tight linkage disequilibrium with, protein-coding regions.
+
+<center><img src="img/snps_everywhere.png" height="300px" /></center>
+
+<div style="font-size: small;">Hindorff LA. et.al. "Potential etiologic and functional implications of genome-wide association loci for human diseases and traits" PNAS 2009, http://www.pnas.org/content/106/23/9362.long</div>
+
+## Genome contains millions of regulatory regions {.larger}
+
+- DNaseI hypersensitive sites
+- Histone modification marks
+- Transcription Factor Binding Sites
+- DNA methylation
+- Enhancers
+- ...
+
+Collectively referred hereafter as _epigenomic_ or _regulatory_ regions
+
+## Definition of Epigenomics {.larger}
+
+**Epigenomic data** = genome annotation data = regions other than DNA sequence, annotated as carrying functional/regulatory potential or having a biological property
+
+<center><img src="img/waddington.png" height="350px" /></center>
+
+<center>**Conrad Hal Waddington** - the father of epigenetics</center>
+
+
+## Genome annotation consortia
+
+<center>
+![](img/data_consortia.png)
+</center>
+
+## Genome in 3D {.larger}
+
+- Genome is not linear - the spatial organization plays an important role in regulation of gene expression 
+- Chromosome Conformation Capture sequencing technologies allow exploring long-range interactions and loop- and domain formation
+
+<center>
+![](img/3D_loops1.png)
+</center>
+
+<div style="font-size: small;">http://www.pnas.org/content/112/47/E6456.long</div>
+
+## Long-range interactions {.larger}
+
+- Long-range interactions compartmentalize a variety of regulatory elements to regulate gene expression
+- Disruption of one or several of such interactions => gene expression changes => disease
+
+<center>
+![](img/transcription_factor2.png)
+</center>
+
+# Genomic data and biostatistics methods
+
+## Growth of genomic data
+
+<center>
+![](img/TCGA.png)
+</center>
+
+&nbsp;
+
+<div style="font-size: 40%;">
+- Muir et al., “The Real Cost of Sequencing.” Genome Biol. 2016
+
+https://genomebiology.biomedcentral.com/articles/10.1186/s13059-016-0917-0
+</div>
+
+***
+
+<center>
+![](img/data_growth.png)
+</center>
+
+<div style="font-size: small;">Michael Eisenstein. Nature 527, S2–S4 (05 November 2015) http://www.nature.com/nature/journal/v527/n7576_supp/full/527S2a.html</div>
+
+## Gap between data generation & data understanding {.larger}
+
+**There is a growing gap between the generation of massively parallel sequencing output and the ability to process and analyze the resulting data**. New users are left to navigate a bewildering maze of base calling, alignment, assembly and analysis tools with often incomplete documentation and no idea how to compare and validate their outputs. **Bridging this gap is essential, or the coveted $1,000 genome will come with a $20,000 analysis price tag**.
+
+<div style="font-size: small;">McPherson, John D. “Next-Generation Gap.” Nature Methods 2009 http://www.nature.com/nmeth/journal/v6/n11s/full/nmeth.f.268.html</div>
+
+## GenomeRunner – a global positioning system within the genome
+
+- Finds significantly enriched co-localizations between ‘omics’ data and genome annotation data
+
+<center><img src="img/genomerunner.png" height="370px" /></center>
+
+<div style="font-size: small;">http://www.integrativegenomics.org</div>
+
+# Epigenomic enrichment analysis
+
+## What is enrichment analysis? {.larger}
+
+**Enrichment analysis** – detection whether a group of objects has certain properties more (or less) frequent than can be expected by chance
+
+>- **Gene set enrichment analysis** - summarizing many _genes_ of interest, such as differentially expressed genes, with a few common _gene annotations_ (molecular functions, canonical pathways)
+
+>- **Epigenomic enrichment analysis** - summarizing many _genomic regions_ of interest, such as disease-associated genomic variants, with a few common _genome annotations_ (chromatin states, transcription factor binding sites)
+
+
+## Enrichment = functional impact | Why do we care? {.larger}
+
+- **Hypothesis**: SNPs in epigenomic regions may disrupt regulation
+- More significant enrichment => more SNPs in epigenomic regions => more regulation is disrupted (SNP burden)
+
+&nbsp;
+
+<center>
+![](img/snp_burden.png)
+</center>
+
+## Enrichment = functional impact | Why do we care? {.larger}
+
+- Epigenomic elements enriched in SNPs (altered by them) may be the new therapeutic target
+
+- Systems biology approach - don't try to fix one faulty SNP, target the whole regulatory system affected by all SNPs
+
+## What GenomeRunner analyzes? {.larger}
+
+Experimental data vs. epigenomic data
+
+- Differentially expressed genes, promoters
+- Differentially methylated regions
+- SNPs, copy number variations, Insertions/Deletions, Structural Variants
+- ChIP-seq peaks
+- 3D interacting regions
+- ...
+
+## Statistics of epigenomic enrichments {.larger}
+
+<center>
+![](img/genomerunner_statistics.png)
+</center>
+
+&nbsp;
+
+- 6 out of 7 disease-associated SNPs overlap with epigenomic marks
+- How likely this to be observed by chance? (Hypergeometric test/Binomial test/Permutation test)
+
+## Statistics of epigenomic enrichments {.larger}
+
+**Hypergeometric test**
+
+- $m$ is the total number of SNPs
+- $j$ is the number of SNPs annotated with a property
+- $n$ is the number of selected SNPs
+- $k$ is the number of selected SNPs annotated with a property
+
+<center><img src="img/hypergeometric.png" height="220px" /></center>
+
+## Statistics of epigenomic enrichments {.larger}
+
+**Hypergeometric test**
+
+- $m$ is the total number of SNPs
+- $j$ is the number of SNPs annotated with a property
+- $n$ is the number of selected SNPs
+- $k$ is the number of selected SNPs annotated with a property
+
+|                    | Selected SNPs    | Not selected SNPs    | Total |
+|--------------------|:----------------:|:--------------------:|:------|
+| Annotated          |        k         |           j-k        | j     |
+| Not annotated      |       n-k        |         m-n-j+k      | m-j   |
+| Total              |       n          |           m-n        |  m    |
+
+## Statistics of epigenomic enrichments {.larger}
+
+**Hypergeometric test**
+
+- $m$ is the total number of SNPs
+- $j$ is the number of SNPs annotated with a property
+- $n$ is the number of selected SNPs
+- $k$ is the number of selected SNPs annotated with a property
+
+What is the probability of having $k$ or more annotated SNPs among the selected $n$ SNPs?
+
+$$P = \sum_{i=k}^n{ \frac{{m-j \choose n-i}{j \choose i}}{{m \choose n}} }$$
+
+## Functional impact of SNPs | HDL cholesterol
+
+<center>
+![](img/hdl_barplot.png)
+</center>
+
+- Epigenomic enrichments are sorted from most to least significant
+- E118-H3K4me1_bPk-processed = "cell/tissue ID"-"factor ID"-"source""
+
+## Functional impact of SNPs | HDL cholesterol
+
+- SNPs associated with HDL cholesterol are enriched in activating histone modification marks in liver cells
+
+<center><img src="img/hdl_table.png" height="400px" /></center>
+
+# Epigenomic similarity analysis
+
+## Epigenomic similarity  {.larger}
+
+- **Hypothesis** - Genomic variants associated with **different diseases** may be enriched in (= disrupt) **similar regulatory elements**. 
+
+Different diseases - similar mechanisms
+
+## Epigenomic similarity | Why do we care?  {.larger}
+
+- Epigenomic similarity among diseases - similar treatment strategies
+
+- Unknown genetic disorders can be matched to known diseases by epigenomic similarity
+
+- Patients can be matched by epigenomic similarity of their genomes
+
+## Epigenomic similarity  {.larger}
+
+**39 SNP sets associated with complex diseases and traits:**
+
+- 21 immunologic diseases
+- 4 neurologic diseases/traits
+- 7 metabolic diseases/traits
+- 7 other traits
+
+<div style="font-size: small;">Farh, KK et.al. “Genetic and Epigenetic Fine Mapping of Causal Autoimmune Disease Variants.” Nature 2015 http://www.nature.com/nature/journal/v518/n7539/full/nature13835.html</div>
+
+## Epigenomic enrichment profiles {.larger}
+
+**Epigenomic enrichment profile** – SNP set-specific vector of epigenomic enrichment ($-log_{10}$-transformed) p-values
+
+<center><img src="img/epigenomic_enrichment_profile.png" height="400px" /></center>
+
+## Epigenomic enrichment profiles | Comparison {.larger}
+
+$-log_{10}$-transformed epigenomic enrichment profiles can be compared using Spearman correlation, PCA
+
+<center><img src="img/epigenomic_enrichment_transformed.png" height="370px" /></center>
+
+## Comparing epigenomic enrichment profiles
+
+PCA separates autoimmune disease-associated SNP sets as the most epigenomically distinct from others
+
+<center><img src="img/pca.png" height="470px" /></center>
+
+## Comparing epigenomic enrichment profiles
+
+<center><img src="img/heatmap.png" height="550px" /></center>
+
+## Validating epigenomic similarity
+
+- **Shared loci** - Jaccard statistics
+- **Semantic similarity** - minMim, misn, obsExp, relOverlap, sharedRels
+- **Disease ontology similarity** - jiang, lin, rel, resnik, wang
+
+<center><img src="img/validating.png" height="350px" /></center>
+
+## Validating epigenomic similarity
+
+- Shared loci vs. Literature Median Spearman = 0.46
+- Shared loci vs. Disease Ontology Median Spearman = 0.30
+- **Epigenomic similarity vs. Shared loci Median Spearman = 0.61**
+
+<center><img src="img/validating.png" height="350px" /></center>
+
+# Differential epigenomic analysis
+
+## Differential epigenomic analysis
+
+- Comparison of _multiple_ sets of genomic variants
+- **Hypothesis** - some sets of genomic variants show consistently more/less significant enrichments
+
+<center><img src="img/differential_enrichment.png" height="450px" /></center>
+
+## Differential epigenomic analysis | Why do we care {.larger}
+
+- Better understanding of the regulatory mechanisms associated with subgroups of diseases
+
+- Finer stratification of patients by the epigenomic differences associated with their genomes
+
+- More precise treatment strategies
+
+## Differential epigenomic analysis {.larger}
+
+- Define two groups of SNP sets (use epigenomic similarity analysis)
+- We are testing whether the _level_ of enrichment differs between groups of SNP sets
+
+<center><img src="img/diffenrich.png" height="350px" /></center>
+
+## Differential epigenomic analysis {.larger}
+
+**Quiescent chromatin states**, T helper cell-specific - enriched in disease SNPs in _red cluster_
+
+**Enhancers**, T helper cell-specific  - enriched in disease SNPs in _green cluster_
+
+<center><img src="img/differential_enrichment_B.png" height="350px" /></center>
+
+# Cell type-specific epigenomic enrichment analysis
+
+## Cell type-specific epigenomic enrichment analysis {.larger}
+
+- Epigenomic elements are cell- and tissue type specific
+
+- **Hypothesis** - a SNP set is more likely to be enriched in epigenomic elements from cell types relevant to phenotype
+
+- Cell type-specific epigenomic enrichment analysis identifies cell types where enrichments are the most significant
+
+## Cell type-specific epigenomic enrichment analysis | Why do we care {.larger}
+
+- More focused understanding of functional impact caused by SNPs
+
+- Treatment of epigenomic abnormalities in relevant cell types
+
+## Cell type-specific epigenomic enrichment analysis {.larger}
+
+Detection of cell/tissue types with many regulatory marks enriched in SNPs
+
+- Global distribution of enrichments - the null model
+- Cell type-specific distribution of enrichments - the alternative model
+- Test whether cell type-specific enrichments are significantly higher than the global level of enrichments
+
+## Cell type specificity of the functional impact of disease SNPs is relevant to disease pathology {.larger}
+
+- Alzheimer SNPs are enriched in brain-specific epigenomic marks
+
+<center><img src="img/cellspecific.png" height="400px" /></center>
+
+# Personalized epigenomics
+
+## Experimental setup {.larger}
+
+- 431 patients diagnosed with Systemic Lupus Erythematosus (SLE)
+
+- Exome sequencing - SNP sets
+
+- Focus on rare variants - patient-specific SNP sets
+
+## Why rare variants? {.larger}
+
+- There is ~4 times more rare SNPs (MAF<5%) than common SNPs (MAF >5%)
+
+<center><img src="img/chart_common-rare_SLE.png" height="400px" /></center>
+
+<div style="font-size: small;">Nelson MR. et.al. "An Abundance of Rare Functional Variants in 202 Drug Target Genes Sequenced in 14,002 People" Science 2012, http://science.sciencemag.org/content/337/6090/100</div>
+
+## Why rare variants? {.larger}
+
+- Common SNPs are largely the same in healthy controls and SLE patients
+
+- ~50% of rare SNPs are specific for either healthy controls, or SLE patients
+
+<center><img src="img/venn_rare.png" height="350px" /></center>
+
+## Hypothesis {.larger}
+
+- Patients may be diagnosed with the same disease, but have different underlying mechanisms
+
+- Patient-specific SNP sets may have similar epigenomic enrichment profiles
+
+- Patients can be classified by similarity of their epigenomic enrichment profiles
+
+- Subgroups of patients having differential epigenomic enrichments may have different clinical outcomes
+
+## Patient-specific SLE-associated rare SNPs
+
+- Five subgroups of patients with distinct epigenomic enrichments
+
+<center><img src="img/rare_snps.png" height="450px" /></center>
+
+## Differential clinical parameters
+
+- Epigenomically distinct subgroups of patients also significantly differ by clinical attributes
+
+<center><img src="img/diff_clin.png" height="450px" /></center>
+
+## Summary {.larger}
+
+- GenomeRunner defines potential functional impact of SNP sets via epigenomic enrichment analysis
+
+- Epigenomic similarity analysis identifies regulatory similarity and differences among SNP sets
+
+- Cell type-specific enrichment analysis prioritizes cell/tissue type specificity of the epigenomic enrichments
+
+- Epigenomic enrichment analyses can be applied to any genomic signature, from disease-associated SNP sets to patient-specific genotypes
+
+# What's next?
+
+## Data integration {.larger}
+
+- Algorithms for processing various genomic data formats into a unified format amenable for **fast** statistical analysis (https://github.com/ryanlayer/giggle)
+
+**3D interaction data**
+
+- Loops
+- Topologically associated domains
+- Stable/unstable 3D genomic regions
+- Strongly interacting regions
+
+## Enrichment methods development
+
+```{r echo=FALSE, message=FALSE, fig.height=5, fig.width=7, cache=TRUE}
+set.seed(3)
+library(wordcloud)
+acknowledgements <- c("EpiGraph", "EpiExplorer", "Genomic HyperBrowser", "Genomic Association Tester (GAT)", "PodBat", "EpiRegNet", "GREAT", "BEDTools", "GenometriCorr", "Genome Track Analyzer (AnCorr)", "ENCODE ChIP-Seq Significance Tool", "The Genboree Epigenome Toolset", "INRICH", "Enrichr", "BioMart Enrichment Tool", "fGWAS", "GoShifter", "FORGE", "ChIPSeeker", "LOLA", "regioneR", "GenomeRunner", "StereoGene")
+frequency_of_acknowledgements <- rep(1, length(acknowledgements))
+library(RColorBrewer)
+pal2 <- brewer.pal(8,"Spectral")
+wordcloud(words = acknowledgements, freq = frequency_of_acknowledgements, min.freq = 1, scale=c(2, 0), rot.per = 0, fixed.asp = FALSE, colors=pal2)
+```
+
+## Analysis: Population epigenomics {.larger}
+
+- Busby, George (2016), “**Genotype data for a set of 163 worldwide populations**”, https://data.mendeley.com/datasets/ckz9mtgrjj/1
+- 2,643 individuals from 163 worldwide human populations. 
+- Epigenomic and 3D similarities and differences in population genome architecture
+
+<center>
+![](img/population.png)
+</center>
+
+## Analysis: Disease epigenomics {.larger}
+
+- **GRASP**: Genome-Wide Repository of Associations Between SNPs and Phenotypes
+- 2,082 GWAS studies. 
+- Epigenomic and 3D similarities and differences in genomic architecture of complex diseases
+
+<center>
+![](img/diseases.png)
+</center>
+
+## Analysis: Personalized epigenomics {.larger}
+
+- **TCGA** - 11,000 patients, 33 tumor types, 7 data types (genotypes, gene expression, methylation etc.). 
+- Epigenomic classification of cancer subtypes
+- Survival differences associated with patient-specific epigenomic signatures
+
+<center><img src="img/TCGA2.png" height="300px" /></center>
+
+## Acknowledgement {.larger}
+
+- Jonathan Wren, Oklahoma Medical Research Foundation
+- Cory Giles, Oklahoma Medical Research Foundation
+- Lukas Cara,  University of St. Thomas, Houston
+- Jianlin Cheng, University of Missouri, Columbia
+- Tuan Trieu, University of Missouri, Columbia
+- Bridget Thomson-McInnes, Virginia Commonwealth Univrsity
+- John Stansfield, Virginia Commonwealth Univrsity
+- Kellen Cresswell, Virginia Commonwealth Univrsity
+
+
+## Thank you
+
+&nbsp;
+
+<div style="font-weight:bold; font-size: xx-large; text-align:center;">
+Questions?
+</div>
+
+&nbsp;
+
+<div style="text-align: center;">
+This presentation on GitHub: 
+
+<https://github.com/mdozmorov/presentations>
+</div>
+
+&nbsp;
+
+<div style="font-size: small;">
+Mikhail Dozmorov, Ph.D.
+
+Assistant professor, Department of Biostatistics, VCU
+
+mikhail.dozmorov@vcuhealth.org 
+</div>
+
