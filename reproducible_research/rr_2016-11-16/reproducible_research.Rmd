@@ -578,13 +578,14 @@ http://www.nature.com/nmeth/journal/v10/n5/full/nmeth.2471.html
 
 <center>
 <img src="img/Nature2016.png" height="270px" />
-</center>
+<img src="img/Nature2017.png" width="500px" />
 
-&nbsp;
-&nbsp;
+</center>
 
 <div style="font-size: 60%;">
 http://www.nature.com/nmeth/journal/v13/n10/full/nmeth.4026.html
+
+http://www.nature.com/nbt/journal/v35/n1/full/nbt.3774.html
 </div>
 
 ## Reproducibility initiatives
