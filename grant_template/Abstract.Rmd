@@ -1,0 +1,17 @@
+---
+bibliography: references.bib
+csl: styles.ref/genomebiology.csl
+output:
+  word_document:
+    reference_docx: styles.doc/NIH_grant_style.docx
+  html_document: default
+---
+
+
+# Title
+
+## Project narrative
+
+## Project Summary/Abstract
+
+## Project Abstract: Technical Version
