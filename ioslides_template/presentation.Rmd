@@ -35,6 +35,7 @@ knit_hooks$set(source = function(x, options){
      hook_source_def(x, options)
   }
 })
+```
 
 ## Image slide
 
