@@ -1,0 +1,161 @@
+---
+title: ""
+author: "Mikhail Dozmorov"
+date: ""
+output:
+  ioslides_presentation:
+    css:
+    - css/fonts.css
+    - css/custom.css
+    - css/title-slide.css
+    - css/slide-background.css
+    transition: faster
+    widescreen: true
+    includes:
+      before_body: html/title.html
+  beamer_presentation:
+    colortheme: dolphin
+    fig_caption: no
+    fig_height: 6
+    fig_width: 7
+    fonttheme: structurebold
+    theme: AnnArbor
+---
+
+```{r setup, include=FALSE}
+# Use 'verbatim = TRUE' as chunk option to show chunk code as is
+require(knitr)
+hook_source_def = knit_hooks$get('source')
+knit_hooks$set(source = function(x, options){
+  if (!is.null(options$verbatim) && options$verbatim){
+    opts = gsub(",\\s*verbatim\\s*=\\s*TRUE\\s*", "", options$params.src)
+    bef = sprintf('\n\n    ```{r %s}\n', opts, "\n")
+    stringr::str_c(bef, paste(knitr:::indent_block(x, "    "), collapse = '\n'), "\n    ```\n")
+  } else {
+     hook_source_def(x, options)
+  }
+})
+```
+
+## RNA-seq pipeline
+
+<center><img src="img/pipeline.png" height="470px" /></center>
+
+<div style="font-size: small;">
+Source: http://genomebiology.biomedcentral.com/articles/10.1186/s13059-016-0881-8
+</div>
+
+## Library preparation
+
+- Ribosomal RNA (rRNA) depletion. rRNAs constitute over 90 % of total RNA in the cell, leaving the 1–2 % comprising messenger RNA (mRNA) that we are normally interested in.
+- Poly(A) selection (for eukaryotes only) - enrich for mRNA
+- rRNA depletion - mRNA + long noncoding RNA
+- Size selection - small/miRNA
+
+## Unstranded vs. Strand-specific library
+
+**Unstranded**
+
+- Random hexamer priming to reverse-transcribe mRNA
+
+**Stranded**
+
+- dUTP method - incorporating UTP nucleotides during the second cDNA synthesis, followed by digestion of the strand containing dUTP
+
+## Single end vs. paired end
+
+- Typical fragment size <500bp
+- Paired end sequencing is preferrable for de novo transcript discovery or isoform expression analysis
+
+## Sequencing length/depth
+
+- Longer reads improve mappability and transcript quantification
+- More transcripts will be detected and their quantification will be more precise as the sample is se- quenced to a deeper level
+- Up to 100 million reads is needed to precisely quantify low expressed transcripts. In reality, 20-30 million reads is OK for human genome.
+
+## Number of replicates
+
+| Replicates per group                 | 3    | 5    | 10    |
+|--------------------------------------|------|------|-------|
+| Effect size (fold change)            |      |      |       |
+| 1.25                                 | 17 % | 25 % | 44 %  |
+| 1.5                                  | 43 % | 64 % | 91 %  |
+| 2                                    | 87 % | 98 % | 100 % |
+| Sequencing depth (millions of reads) |      |      |       |
+| 3                                    | 19 % | 29 % | 52 %  |
+| 10                                   | 33 % | 51 % | 80 %  |
+| 15                                   | 38 % | 57 % | 85 %  |
+
+<div style="font-size: small;">
+Source: http://genomebiology.biomedcentral.com/articles/10.1186/s13059-016-0881-8
+</div>
+
+## Power calculations
+
+Scotty - Power Analysis for RNA Seq Experiments http://scotty.genetics.utah.edu/
+
+Busby MA, Stewart C, Miller CA, Grzeda KR, Marth GT. "Scotty: a web tool for designing RNA-Seq experiments to measure differential gene expression". _Bioinformatics_ 2013 https://www.ncbi.nlm.nih.gov/pubmed/23314327
+
+## Quality control
+
+- FASTQC - quality of raw sequencing data
+- RNASeQC - quality of mapped data
+
+## Adapter trimming
+
+- FASTX-Toolkit
+- Trimmomatic
+
+## Alignment
+
+- RNA-seq aligners face an additional problem, not encountered in DNA-only alignment: many RNA-seq reads will span introns
+- The average human intron length is >6,000 bp (some are >1 Mbp in length)
+- In a typical human RNA-seq experiment using 100-bp reads, >35% of the reads will span multiple exons
+
+## Alignment
+
+- **HISAT** - uses two types of indexes for alignment: a global, whole-genome index and tens of thousands of small local indexes. Can detect novel splice sites, transcription initiation and termination sites. http://ccb.jhu.edu/software/hisat2/index.shtml
+
+## References
+
+- New "Tuxedo suite": HISAT (hierarchical indexing for spliced alignment of transcripts), StringTie and Ballgown
+
+Pertea, M. et.al. “Transcript-Level Expression Analysis of RNA-Seq Experiments with HISAT, StringTie and Ballgown.” _Nature Protocols_ 2016. http://www.nature.com/nprot/journal/v11/n9/full/nprot.2016.095.html
+
+- Conesa, A. et.al. “A Survey of Best Practices for RNA-Seq Data Analysis.” _Genome Biology_ 2016. http://genomebiology.biomedcentral.com/articles/10.1186/s13059-016-0881-8
+
+
+
+## Image slide
+
+<center>
+![](img/why_enrichment1.png)
+</center>
+
+<center><img src="img/clustering.png" height="370px" /></center>
+
+## Thank you
+
+&nbsp;
+
+<div style="font-weight:bold; font-size: xx-large; text-align:center;">
+Questions?
+</div>
+
+&nbsp;
+
+<div style="text-align: center;">
+This presentation on GitHub: 
+
+<https://github.com/mdozmorov/presentations>
+</div>
+
+&nbsp;
+
+<div style="font-size: small;">
+Mikhail Dozmorov, Ph.D.
+
+Assistant professor, Department of Biostatistics, VCU
+
+mikhail.dozmorov@vcuhealth.org 
+</div>
