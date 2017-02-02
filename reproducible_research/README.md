@@ -1,5 +1,7 @@
 # Materials and links related to reproducible research topic
 
+- `rr_latest` - latest slides and updates re: reproducible research topic
+
 ## Reproducible research seminars
 
 - `rr_2016-01-29.*` - for the Biostatistics department, slides and abstract
