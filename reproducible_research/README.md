@@ -8,6 +8,7 @@
 - `rr_2016-04-27.*` - for the Massey Cancer Center, slides only
 - `rr_2016-09-09.*` - for the Computer Science Department, VCU. Slides, abstract, and sourcecode. See it at [rpubs.com/mdozmorov/rr](rpubs.com/mdozmorov/rr)
 - `rr_2016-11-16.*` - for the Bioinformatics 101 course, VCU.
+- `rr_2017-03-28.*` - for the CCTR, VCU. Short version.
 
 # References
 
