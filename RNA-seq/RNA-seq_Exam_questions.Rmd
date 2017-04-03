@@ -1,0 +1,63 @@
+---
+title: "RNA-seq exam questions"
+author: "Mikhail Dozmorov"
+output:
+  pdf_document: default
+  html_document: default
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+```
+
+
+# Short answer
+
+Q: Discuss the goals of RNA-seq.
+
+&nbsp;
+
+Q: How strand-specific library works?
+
+&nbsp;
+
+Q: What is the difference between FASTA and FASTQ files?
+
+&nbsp;
+
+Q: What is the difference between RPKM and FPKM?
+
+# Multiple choice
+
+Q: What is the correct sequence of RNA-seq library preparation?
+
+a. Fragment into short fragments, select RNA fraction, amplification, size selection, attach adapters
+b. Select RNA fraction, fragment into short fragments, size selection, amplification, attach adapters
+c. Attach adapters, amplification, fragment into short fragments, select RNA fraction, size selection
+d. Amplification, size selection, fragment into short fragments, select RNA fraction, attach adapters
+
+&nbsp;
+
+Q: What read length is typically used in Illumina sequencing?
+
+a. 100bp, single end
+b. 100bp, paired end
+c. 1000bp, paired end
+d. 150bp, paired end
+e. 75bp, single end
+f. All of the above
+g. a, b, d, e
+
+&nbsp;
+
+Q: How many reads is sufficient for RNA-seq of human genome?
+
+a. 50 thousand
+b. 50 million
+c. 3 billion
+d. 20 million
+e. 100 thousand paired-end reads
+f. All of the above
+g. b, c, d
+h. a, e
+
