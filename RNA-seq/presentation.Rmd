@@ -924,10 +924,9 @@ Visualization of alternative splicing events using RNA-seq data
 ## References
 
 - Pertea, M. et.al. “Transcript-Level Expression Analysis of RNA-Seq Experiments with HISAT, StringTie and Ballgown.” _Nature Protocols_ 2016. http://www.nature.com/nprot/journal/v11/n9/full/nprot.2016.095.html
-
 - Williams, A. et.al. "RNA-Seq Data: Challenges in and Recommendations for Experimental Design and Analysis: RNA-Seq Data: Experimental Design and Analysis." 2014. http://onlinelibrary.wiley.com/doi/10.1002/0471142905.hg1113s83/abstract
-
 - Tools for RNA-seq data analysis, http://journals.plos.org/ploscompbiol/article/file?type=supplementary&id=info:doi/10.1371/journal.pcbi.1004393.s004
+- Comprehensive collection of RNA-seq analysis noted from Tommy Tang, https://github.com/crazyhottommy/RNA-seq-analysis
 
 
 ## Thank you
