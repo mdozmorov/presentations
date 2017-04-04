@@ -330,14 +330,11 @@ Source: http://genomebiology.biomedcentral.com/articles/10.1186/s13059-016-0881-
 
 ## Power calculations
 
-- **Scotty**
-    - Power Analysis for RNA Seq Experiments, http://scotty.genetics.utah.edu/
+- **Scotty** - Power Analysis for RNA Seq Experiments, http://scotty.genetics.utah.edu/
 
-- **powerSampleSizeCalculator**
-    - R scripts for power analysis and sample size estimation for RNA-Seq differential expression, http://www2.hawaii.edu/~lgarmire/RNASeqPowerCalculator.htm
+- **powerSampleSizeCalculator** - R scripts for power analysis and sample size estimation for RNA-Seq differential expression, http://www2.hawaii.edu/~lgarmire/RNASeqPowerCalculator.htm
 
-- **RnaSeqSampleSize**
-    - R package and a Shiny app for RNA sequencing data sample size estimation, https://cqs.mc.vanderbilt.edu/shiny/RNAseqPS/
+- **RnaSeqSampleSize** - R package and a Shiny app for RNA sequencing data sample size estimation, https://cqs.mc.vanderbilt.edu/shiny/RNAseqPS/
 
 <div style="font-size: small;">
 Busby MA, Stewart C, Miller CA, Grzeda KR, Marth GT. "Scotty: a web tool for designing RNA-Seq experiments to measure differential gene expression". _Bioinformatics_ 2013 https://www.ncbi.nlm.nih.gov/pubmed/23314327
@@ -345,6 +342,9 @@ Busby MA, Stewart C, Miller CA, Grzeda KR, Marth GT. "Scotty: a web tool for des
 Travers C. et.al. "Power analysis and sample size estimation for RNA-Seq differential expression" _RNA_ 2014 https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4201821/
 
 Guo et.al. "RNAseqPS: A Web Tool for Estimating Sample Size and Power for RNAseq Experiment" _Cancer Informatics_ 2014 http://insights.sagepub.com/rnaseqps-a-web-tool-for-estimating-sample-size-and-power-for-rnaseq-ex-article-a4433
+
+Svensson, V. et.al. "Power Analysis of Single-Cell RNA-Sequencing Experiments." _Nature Methods_ 2017 http://www.nature.com/nmeth/journal/v14/n4/pdf/nmeth.4220.pdf
+
 </div>
 
 # RNA-seq analysis workflow
