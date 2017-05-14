@@ -336,6 +336,8 @@ Source: http://genomebiology.biomedcentral.com/articles/10.1186/s13059-016-0881-
 
 - **RnaSeqSampleSize** - R package and a Shiny app for RNA sequencing data sample size estimation, https://cqs.mc.vanderbilt.edu/shiny/RNAseqPS/
 
+- **RNASeqPower** - R package for RNA-seq sample size analysis, https://bioconductor.org/packages/release/bioc/html/RNASeqPower.html
+
 <div style="font-size: small;">
 Busby MA, Stewart C, Miller CA, Grzeda KR, Marth GT. "Scotty: a web tool for designing RNA-Seq experiments to measure differential gene expression". _Bioinformatics_ 2013 https://www.ncbi.nlm.nih.gov/pubmed/23314327
 
