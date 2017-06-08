@@ -91,3 +91,6 @@ Slides of interest from presentations of others.
     - "Announcement: Towards greater reproducibility for life-sciences research in Nature" - Nature requirements for reproducibility. https://www.nature.com/news/announcement-towards-greater-reproducibility-for-life-sciences-research-in-nature-1.22062
     - `Policy.pdf` - Editorial Policy Checklist. Checkboxes and links to the required documents. https://www.nature.com/authors/policies/Policy.pdf
     - `ReportingSummary.pdf` - Life Sciences Reporting Summary. Text boxes for the description of items need to be reported.
+
+- `data_sharing_june_2017.pdf` - "Data Sharing Statements for Clinical Trials: A Requirement of the
+International Committee of Medical Journal Editors". All clinical trials that begin enrolling after January 1, 2019, must include a data sharing plan on ClinicalTrials.gov. All manuscripts submitted after July 1, 2018 must include a data sharing statement.
