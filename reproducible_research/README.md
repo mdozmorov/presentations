@@ -72,3 +72,22 @@
 - `greport` Package: Graphical Reporting for Clinical Trials [http://biostat.mc.vanderbilt.edu/wiki/Main/Greport](http://biostat.mc.vanderbilt.edu/wiki/Main/Greport), and its extension `hreport` package [https://github.com/harrelfe/hreport](https://github.com/harrelfe/hreport)
 
 - Why reproducibility issues arise? "Hard work, little reward: Nature readers reveal working hours and research challenges", [http://www.nature.com/news/hard-work-little-reward-nature-readers-reveal-working-hours-and-research-challenges-1.20933](http://www.nature.com/news/hard-work-little-reward-nature-readers-reveal-working-hours-and-research-challenges-1.20933)
+
+## `others` folder
+
+Slides of interest from presentations of others.
+
+- `baggerly_enar1/2_15.pdf` - Keith Baggerly slides
+
+- `grant-guideline.pdf` - Rigor and Reproducibility Changes, Visualized, [Download](https://nexus.od.nih.gov/all/2016/04/30/rigor-and-reproducibility-changes-visualized/)
+
+- `Lab_Notebook_508_(new).pdf` - Slides from the OITE Webinar: "Keeping a Lab Notebook", [Download](https://www.training.nih.gov/assets/Lab_Notebook_508_(new).pdf))
+
+- `peng_slides_AMP2011.pdf` - [Roger Peng: "Computational and Policy Tools for Reproducible Research"](http://stodden.net/AMP2011/index.html#RP)
+
+- `peng_slides_ENAR2009.pdf` - [Roger Peng, ENAR 2009: "Methods for Reproducible Research"](http://www.biostat.jhsph.edu/~rpeng/ENAR2009/)
+
+- `Nature`
+    - "Announcement: Towards greater reproducibility for life-sciences research in Nature" - Nature requirements for reproducibility. https://www.nature.com/news/announcement-towards-greater-reproducibility-for-life-sciences-research-in-nature-1.22062
+    - `Policy.pdf` - Editorial Policy Checklist. Checkboxes and links to the required documents. https://www.nature.com/authors/policies/Policy.pdf
+    - `ReportingSummary.pdf` - Life Sciences Reporting Summary. Text boxes for the description of items need to be reported.
