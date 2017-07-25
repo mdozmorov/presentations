@@ -4,6 +4,8 @@
 
 ## `3D`
 
+- `3d-genome-processing-tutorial` - A 3D genome data processing tutorial for ISMB/ECCB 2017. https://github.com/hms-dbmi/3d-genome-processing-tutorial
+
 - `L13-hi-c-pekowska.pdf` - Hi-C technology, https://www.bioconductor.org/help/course-materials/2015/CSAMA2015/lect/L13-hi-c-pekowska.pdf
 
 - `mirnyslides.pdf` - "Genome in 3D: modeling chromosome organization", Leonid Mirny slides and 35 min video from https://simons.berkeley.edu/talks/leonid-mirny-03-08-16
