@@ -6,13 +6,11 @@ See it in action at (URL)
 
 ## `lab` - in-class lab material
 
+## `read`
+
 ## ToDo
 
 ## ToRead
-
-## Exercise
-
-## Homework
 
 ## `misc`
 
