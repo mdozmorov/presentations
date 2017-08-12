@@ -1,4 +1,4 @@
-This presentation is a ioslides template
+This presentation is a ioslides template. Intended for in-class presentations.
 
 See it in action at (URL)
 
@@ -6,11 +6,10 @@ See it in action at (URL)
 
 ## `lab` - in-class lab material
 
-## `read`
+## `read` - reading assignment
 
-## ToDo
+## `misc` - misc presentations and materials
 
-## ToRead
+## ToDo - todo list
 
-## `misc`
 
