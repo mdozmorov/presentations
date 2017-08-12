@@ -6,13 +6,16 @@
 .Rhistory
 *.xlsx
 *.docx
+*.html
 Untitled*
 *_cache
 *_files
 rsconnect
 functional_enrichment/Functional_enrichment_*.txt
+RNA-seq/RNA-seq_Exam_answers.Rmd
 reproducible_research/Others/
 manuscript_template
 md2googleslides
 academicpages.github.io
-
+misc
+*template*
