@@ -5,12 +5,12 @@ subtitle: in data science
 output:
   ioslides_presentation:
     css:
-    - css/fonts.css
-    - css/custom.css
-    - css/title-slide.css
-    - css/slide-background.css
+    - ../css/fonts.css
+    - ../css/custom.css
+    - ../css/title-slide.css
+    - ../css/slide-background.css
     includes:
-      before_body: html/title.html
+      before_body: ../html/title.html
     transition: faster
     widescreen: yes
   beamer_presentation: default
@@ -1006,6 +1006,13 @@ https://www.docker.com/
 - In addition to what was done, is it clear why it was done? (e.g., how parameter settings were chosen?)
 
 - Is your code scalable to accommodate more data/methods?
+
+## So ware stack of interconnected technologies that enables complete computational reproducibility
+
+<center><img src="img/reproducibility_stack.png" height="370px" /></center>
+
+- Grüning, Björn, John Chilton, Johannes Köster, Ryan Dale, Jeremy Goecks, Rolf Backofen, Anton Nekrutenko, and James Taylor. “Practical Computational Reproducibility in the Life Sciences,” October 11, 2017. https://doi.org/10.1101/200683.
+
 
 ## Six degrees of reproducibility {.larger}
 
