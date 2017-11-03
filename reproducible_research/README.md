@@ -94,3 +94,5 @@ Slides of interest from presentations of others.
 
 - `data_sharing_june_2017.pdf` - "Data Sharing Statements for Clinical Trials: A Requirement of the
 International Committee of Medical Journal Editors". All clinical trials that begin enrolling after January 1, 2019, must include a data sharing plan on ClinicalTrials.gov. All manuscripts submitted after July 1, 2018 must include a data sharing statement.
+
+- `rr_org.txt` - "Org-mode as a tool for reproducible research", slides for the talk by Evan Misshula. https://www.youtube.com/watch?v=CGnt_PWoM5Y
