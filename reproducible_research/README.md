@@ -14,6 +14,8 @@
 
 ## Videos
 
+- "When is Reproducibility an Ethical Issue? Genomics, Personalized Medicine, and Human Error," Keith Baggerly, MD Anderson Cancer Center, August 14, 2013, webinar from Banff International Research Station. [http://www.birs.ca/events/2013/5-day-workshops/13w5083/videos/watch/201308141121-Baggerly.html](http://www.birs.ca/events/2013/5-day-workshops/13w5083/videos/watch/201308141121-Baggerly.html)
+
 - "Reproducible Research: The Time is Now" - webinar by Keith Baggerly, ENAR, November 20, 2015. [http://www3.mdanderson.org/streams/FullVideoPlayer.cfm?mediaID=8979D134-6B1A-4334-A2FF-3A74ABE22C5A](http://www3.mdanderson.org/streams/FullVideoPlayer.cfm?mediaID=8979D134-6B1A-4334-A2FF-3A74ABE22C5A)
 
 - "The Importance of Reproducibility in High-Throughput Biology: Case Studies in Forensic Bioinformatics" - seminar by Keith Baggerly, Cambridge, September 4, 2010. [http://videolectures.net/cancerbioinformatics2010_baggerly_irrh/](http://videolectures.net/cancerbioinformatics2010_baggerly_irrh/) - Video and Slides.
